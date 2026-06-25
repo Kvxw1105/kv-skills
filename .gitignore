@@ -1,0 +1,12 @@
+# 技能包共享内容
+# 个人记忆/配置不进版本管理
+
+.agent-memory/
+.context/
+*.local.*
+.env
+.env.*
+mcp.json
+**/CLAUDE.md
+.DS_Store
+Thumbs.db
