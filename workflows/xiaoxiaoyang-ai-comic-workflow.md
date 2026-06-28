@@ -66,7 +66,7 @@ Page 2 topic: {page_2_topic}
 Page 3 topic: {page_3_topic}
 - Panel 1: {p3_panel1_visual}; Caption: “{p3_caption1}”
 - Panel 2: {p3_panel2_visual}; Caption: “{p3_caption2}”
-- Panel 3: {p3_caption3}”
+- Panel 3: {p3_panel3_visual}; Caption: “{p3_caption3}”
 
 Page 4 topic: {page_4_topic}
 - Panel 1: {p4_panel1_visual}; Caption: “{p4_caption1}”
