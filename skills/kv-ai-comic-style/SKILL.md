@@ -1,134 +1,74 @@
 ---
 name: kv-ai-comic-style
-description: Create and refine cute Chinese educational comic image prompts, visual scripts, and reusable workflows for AI/business explainer content. Use this skill when the user wants to reverse-engineer or reproduce a consistent hand-drawn pastel comic style from reference images, generate prompts for image models, build a recurring mascot series, create social-media carousel pages, or turn topics such as AI basics, prompt engineering, agents, context engineering, loop, harness, OPC, personal company, and knowledge products into short comic panels.
-version: 1.0.0
-license: MIT
-metadata:
-  author: 心吾
-  category: visual-prompt-design
-  layer: creative-production
-  compatibility:
-    - chatgpt
-    - image-generation
-    - claude-code
-    - proma
-    - cursor
-    - windsurf
-    - opencode
-    - any-agent
-  ip-prefix: kv
-  display-name: KV AI Comic Style
-  chinese-name: 小小羊讲AI漫画风格
-  design-philosophy: 用低视觉负担解释抽象概念。先压缩概念，再设计比喻，最后生成可执行的分镜与图像提示词。
-  token-budget:
-    skill-md: ~1500
-    full-load: ~6500
+description: create, update, and production-plan the ai sanfangu chinese comic ip system. use when generating image prompts, video prompts, scripts, page plans, character rules, social media carousels, dark/night mode posters, account-matrix strategy, or topic planning for 白卷羊, 懒团团, and 灰策狼 across ai concepts, workflows, automation, research, workplace, content creation, and ai commercialization.
 ---
 
 # KV AI Comic Style
 
-Create a complete comic-generation package, not only a loose image prompt.
+Use this skill to turn AI/computer/business/cognition topics into a consistent Chinese comic IP system, not merely a one-off image prompt.
 
-This skill is built for the recurring series **小小羊讲AI**: a cute, original, hand-drawn Chinese educational comic system for explaining AI, agents, prompt engineering, context engineering, OPC, personal company, knowledge products, and related concepts.
+## Default workflow
 
-## Core Output
+1. Identify the output type:
+   - bright educational comic page or carousel
+   - dark/night poster or storyline beat
+   - 10-second dynamic-comic video prompt
+   - account/topic/content planning
+   - repair prompt for inconsistent characters, text, layout, or social-background cropping
+2. Select the account/character angle:
+   - 白卷羊: explain what it is and how the system works
+   - 懒团团: turn messy/repeated work into structure, template, workflow, automation
+   - 灰策狼: turn AI ability into result, delivery, pricing, product, business value
+3. Compress the topic into one core sentence.
+4. Plan the arc as: pain/misunderstanding -> mechanism/structure -> useful action/result.
+5. Output page scripts first when useful, then ready-to-use image/video prompts.
+6. Run the quality checklist before finalizing.
 
-For each request, return:
+## Load references as needed
 
-1. **Series concept**: topic, target reader, core teaching point.
-2. **Visual system**: mascot, page layout, color palette, line style, icon language.
-3. **Panel script**: one idea per panel, with action, object, and caption.
-4. **Image prompt**: ready to paste into an image generation model.
-5. **Quality checklist**: checks for text legibility, character consistency, and originality.
+- Use `references/characters.md` for the three IP character rules and identity constraints.
+- Use `references/visual-system.md` for day mode, night mode, poster/background, and layout rules.
+- Use `references/content-strategy.md` for the three-account matrix, rivalry, and black-box storyline.
+- Use `references/prompt-templates.md` for image prompt templates and repair prompts.
+- Use `references/video-workflow.md` for 10-second dynamic-comic video prompts.
+- Use `references/topic-bank.md` for early topics and content lanes.
+- Use `references/first-issue-examples.md` for first-issue structures.
+- Use `references/quality-checklist.md` before returning prompts or production plans.
 
-Use `references/design-system.md` for style rules and `references/prompt-templates.md` for prompt structures.
-Use `references/workflow.md` when the user asks for an automated or repeatable workflow.
+## Core identity
 
-## Style Principle
+The current IP universe is **AI三反骨**.
 
-Create work that is close in feeling to a cute, hand-drawn Chinese social-media explainer comic, but clearly original. Do not copy exact characters, account branding, page numbers, captions, compositions, or distinctive IP. Describe style through general traits: sketchy black outlines, pale mint panels, warm off-white background, cute mascot, simple icons, and short captions.
+External slogan: **讲清楚 · 能偷懒 · 会变现**.
+Internal strategy: **看懂系统 · 改造系统 · 创造结果**.
 
-## Character System
+Never revert the lead explainer to “小小羊”. The canonical name is **白卷羊**. The name means both a blank page with infinite possibility and a warning that without the right method, cognition, or tools, effort can become “白白地卷”.
 
-Use a recurring mascot when requested. For the current series, use:
+## Main line versus extensions
 
-- Name: 小小羊
-- Species: original cute lamb
-- Identifiers: white fluffy wool, curled forelock, one red eye, one green eye, rounded body, small blush, expressive but simple face
-- Avoid: exact 喜羊羊 design, horns, costume copying, or any named IP likeness
+Keep the main line anchored in AI, computer concepts, AI applications, concept maps, systems, workflows, and AI-era cognition. Topics about school, workplace, human relations, or survival rules are allowed only when they return to an AI/system concept such as Context, Loop, Workflow, information flow, boundary conditions, or node value.
 
-Keep the mascot consistent across pages by repeating the same identifiers in every page prompt.
+## Output pattern
 
-## Page Structure
+For image prompts, return:
 
-Default to a vertical 9:16 social-media comic page with:
+1. Topic and target reader
+2. Core teaching point
+3. Page count and page arc
+4. Character angle
+5. Panel-by-panel script with exact short Chinese captions
+6. Final image prompt(s)
+7. Negative constraints
+8. QA notes and post-edit overlay plan when text accuracy matters
 
-- Top title bubble
-- Page label such as `第1页 / 共4页`
-- Topic subtitle
-- Three horizontal mini-scenes
-- Short Chinese caption below each scene
-- Pale mint/teal rectangular stage panels
-- Thick, slightly wobbly black outlines
-- Soft flat colors, tiny stars, arrows, dotted lines, simple icons
+For content strategy, separate:
 
-For multi-page carousels, keep the title, mascot, palette, and layout stable while changing topic and scene content.
+- main line / day mode content
+- dark line / night mode storyline
+- account-specific angle
+- rivalry or collaboration beat
+- concrete publishable titles
 
-## Content Strategy
+## Text discipline
 
-Make abstract AI ideas concrete through analogy and action.
-
-Prefer this structure:
-
-1. Misunderstanding or pain point
-2. Simple mechanism or mental model
-3. Practical example or takeaway
-
-For AI/business topics:
-
-- AI basics: black box → prediction/context → clear input improves answer
-- Prompt engineering: vague request → role/goal/format/constraints → useful answer
-- AI Agent: chat assistant → tools/context/memory/execution → context-loop-harness
-- Context engineering: visible information → memory/retrieval → reliable task performance
-- Harness/loop: scattered prompting → repeatable workflow → measurable production system
-- OPC/personal company: solo workload → AI mini-team → productized knowledge/result
-
-## Text Rules
-
-Chinese text must be short and large enough to read. Use captions under panels instead of dense text inside bubbles when possible.
-
-Recommended limits:
-
-- Main title: 4-8 Chinese characters plus optional English term
-- Panel caption: 18-32 Chinese characters
-- Speech bubble: 6-18 Chinese characters
-- Detailed bubble: only if essential; break into 2-4 short lines
-
-If image text accuracy matters, provide both:
-
-1. a visual prompt with minimal text, and
-2. a post-edit text overlay plan listing exact final copy.
-
-## Prompt Assembly
-
-When writing the final image prompt, include these blocks in order:
-
-1. Role and task: create original Chinese educational comic page.
-2. Style reference: hand-drawn pastel webcomic traits, not copied.
-3. Mascot specification.
-4. Page layout specification.
-5. Topic and teaching logic.
-6. Panel-by-panel scenes and exact captions.
-7. Negative constraints: no phone UI, no watermark, no copying exact reference character, no clutter, legible text.
-
-## Quality Checklist
-
-Before finalizing, check:
-
-- The mascot is recognizable and consistent.
-- The topic can be understood without external explanation.
-- Every panel has one clear action or metaphor.
-- Captions are concise and not generic.
-- The generated image prompt asks for original composition, not direct imitation.
-- Visual density is low enough for mobile viewing.
-- Chinese text is short enough for image models to render.
+Use short, readable Chinese. Prefer captions under panels over dense speech bubbles. Use image-model text sparingly; provide an overlay plan when precise text is critical.
