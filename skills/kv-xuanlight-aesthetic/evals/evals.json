@@ -1,0 +1,23 @@
+{
+  "skill_name": "kv-xuanlight-aesthetic",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "请把‘一个站在黑色湖边、看着远方微光城市的少年’转译为玄光·废墟风格，做成 1:1 封面图。输出风格理解、中英双语关键词、抽象版/通用版/具体版 prompt、负面词、参数建议和后续迭代方向。",
+      "expected_output": "Agent should identify Xuanlight Ruins as the main branch, explain why, output bilingual keywords, three prompt layers, negative prompt, parameter guidance, and iteration directions in a structured format.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "请把‘AI 时代的自我觉醒’转译为玄光·灵核风格，做成 4:5 海报，用于产品世界观主视觉。请注意要高级、克制、诗性，不要赛博 UI 堆砌。",
+      "expected_output": "Agent should choose Xuanlight Soulcore, preserve the spiritual sci-fi angle, explicitly avoid generic cyberpunk UI, and produce a structured response with prompt layers and visual guidance.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我想做一个连续 4 格剧情插画，主题是‘旧屋中回忆恋人’，请用玄光·梦室来做。每一格只承载一个情绪重点，并帮我给出系列统一策略。",
+      "expected_output": "Agent should identify Xuanlight Room plus panel/series handling, explain fixed vs variable elements for series consistency, and output prompt structure suitable for multi-panel storytelling.",
+      "files": []
+    }
+  ]
+}

@@ -13,6 +13,7 @@
 | [**kv-clarity-mirror**](skills/kv-clarity-mirror/) | 清晰镜 — AI 盲区检查器 | 运行时自检，在交付前捕获最可能翻车的地方 |
 | [**kv-sanity-auditor**](skills/kv-sanity-auditor/) | 苛刻产品体验官 | 六视角融合审查 AI 产品的体验完整性 |
 | [**kv-ai-comic-style**](skills/kv-ai-comic-style/) | AI三反骨 — 漫画 IP 生产流 | 把 AI / Agent / Workflow / OPC 等概念转成三账号漫画、暗线剧情、视频提示词与图像提示词 |
+| [**kv-xuanlight-aesthetic**](skills/kv-xuanlight-aesthetic/) | 玄光美学风格系统 | 将普通视觉需求系统化转译为诗性、神性微光、低清颗粒的玄光视觉语言 |
 
 ---
 
@@ -29,6 +30,7 @@ npx skillkit add Kvxw1105/kv-insight-engine
 npx skillkit add Kvxw1105/kv-clarity-mirror
 npx skillkit add Kvxw1105/kv-sanity-auditor
 npx skillkit add Kvxw1105/kv-ai-comic-style
+npx skillkit add Kvxw1105/kv-xuanlight-aesthetic
 ```
 
 或用 `skills` CLI：
@@ -36,6 +38,7 @@ npx skillkit add Kvxw1105/kv-ai-comic-style
 ```bash
 npx skills add Kvxw1105/kv-sanity-auditor
 npx skills add Kvxw1105/kv-ai-comic-style
+npx skills add Kvxw1105/kv-xuanlight-aesthetic
 ```
 
 ---
@@ -50,21 +53,27 @@ npx skills add Kvxw1105/kv-ai-comic-style
                     v                  v
                     kv-sanity-auditor
                   （产品体验验收官）
+                   /                 \
+                  v                   v
+     kv-xuanlight-aesthetic      kv-ai-comic-style
+       （玄光美学风格系统）      （AI三反骨漫画 IP 生产流）
 
-           kv-ai-comic-style
-          （把想法变成可复用的 AI三反骨视觉内容生产流）
-
-           kv-skill-creator（私人元技能，不在此仓库）
+           xw-skill-creator（私人元技能，不在此仓库）
           （创建新技能的心吾版生产工具）
 ```
 
 - **insight-engine** 帮你把答案做得更深、更强
 - **clarity-mirror** 帮你交付前检查盲区
 - **sanity-auditor** 帮你验收 AI 产出的体验完整性
+- **xuanlight-aesthetic** 帮你把视觉需求提升成完整风格系统，而不是一条普通 prompt
 - **ai-comic-style** 帮你把抽象 AI/商业概念转成可持续生产的漫画内容宇宙
 
-三者配合使用：**想深 → 查漏 → 验收质量**。  
-视觉生产时增加 **ai-comic-style**：**主题 → 分镜 → 图像/视频提示词 → 迭代修图 → 账号矩阵内容**。
+你可以这样理解当前公开技能线：
+- **想深** → `kv-insight-engine`
+- **查漏** → `kv-clarity-mirror`
+- **验收质量** → `kv-sanity-auditor`
+- **做风格系统化表达** → `kv-xuanlight-aesthetic`
+- **做连续漫画内容生产** → `kv-ai-comic-style`
 
 ---
 
