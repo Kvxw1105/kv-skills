@@ -2,227 +2,247 @@
 name: kv-biji-note-extractor
 description: |
   Extract complete note content (original text + AI summaries) from biji.com (得到大脑) knowledge bases. Use when the user wants to scrape, extract, or download notes from biji.com knowledge base pages, or mentions 得到笔记/得到大脑/biji.com extraction. Also triggers on: 爬取笔记、抓取得到、导出知识库、biji.com 批量下载。
-version: 2.0.0
+version: 3.0.0
 ---
 
-# biji.com 笔记提取技能 v2
+# biji.com 笔记提取技能 v3
 
-从得到大脑 (biji.com) 知识库中批量提取笔记的完整原文和 AI 总结分析。
+从得到大脑 (biji.com) 知识库中批量提取笔记的完整原文和 AI 总结。
 
 ## 适用场景
 
 - 用户要求提取/抓取/下载 biji.com 知识库中的笔记内容
 - 用户提供了 biji.com/subject/... 格式的链接
-- 需要获取笔记的完整原文（不仅仅是页面上显示的摘要）
+- 需要获取笔记的完整原文和 AI 总结
 
-## 核心难点
+## 核心架构（v3 验证通过）
 
-biji.com 是 Vue.js 3 单页应用（Pinia + Vue Router），存在以下关键障碍：
+**快速通道**（推荐，约 10 次工具调用完成全部提取）：
 
-1. **灰色链接区块**：每篇笔记的完整原文在灰色区块中，点击后通过 `window.open()` 在新标签页打开原始笔记页。但浏览器弹窗拦截器会阻止新标签打开。
-2. **侧边栏切换**：笔记列表在侧边栏中，需要通过 JS 点击切换，不能用坐标点击。
-3. **JS 变量陷阱**：在此环境的浏览器 JS 工具中，`const`/`let` 中间变量赋值返回 `undefined`，必须用链式表达式。
-4. **虚拟滚动**：侧边栏使用虚拟滚动（virtual scrolling），DOM 中只渲染约 50 个 `.sider-list-item`，即使实际笔记数量更多。
-5. **页面重渲染杀死异步**：每次侧边栏切换笔记后 Vue 组件重新渲染，会中断所有 pending 的 setTimeout/async 回调。
+```
+XHR 劫持捕获认证头 → API 批量获取笔记列表+AI总结 → iframe 并行加载获取原文 → 清洗 → 组装
+```
+
+**Fallback**（仅当快速通道失败时使用）：
+逐篇点击侧边栏 + window.open 劫持 + 新标签页读取。约 200 次工具调用，仅在 API 变更时使用。
 
 ---
 
-## 反模式警告 — 不要走这些弯路
+## 完整执行流程（含可执行代码）
 
-以下方法在实际测试中**全部失败**，不要尝试：
+### 第一步：导航到知识库页面
 
-### ❌ 异步批量脚本（async/await + setTimeout 循环）
+用浏览器 `navigate` 工具打开用户提供的 URL，记录 `tabId`。
 
-```javascript
-// 不要这样做！页面重渲染会杀死你的回调
-(async () => {
-  for (let i = 0; i < 64; i++) {
-    document.querySelectorAll('.sider-list-item')[i].click();
-    await new Promise(r => setTimeout(r, 1000));
-    // ... 这里永远不会执行，因为页面重渲染了
-  }
-})();
-```
-
-**失败原因**：Vue 组件重渲染会中断 async 函数的执行上下文，setTimeout 回调不会被触发。实测 64 篇只跑了 12 篇就卡死。
-
-### ❌ 直接调用 API
-
-```javascript
-// 不要这样做！CORS 和认证会阻止你
-fetch('https://knowledge-api.trytalks.com/v1/web/topic/resource/list/mix?...')
-```
-
-**失败原因**：API 需要内部认证上下文（cookie/token + 特殊请求头），从浏览器 JS 环境裸调会返回 `AppNotFound` 或 `Failed to fetch`。XMLHttpRequest 同样失败。
-
-### ❌ 从 Vue/Pinia 实例提取数据
-
-```javascript
-// 不要这样做！数据结构不直接暴露笔记 ID
-document.querySelector('#app').__vue_app__.config.globalProperties.$pinia._s
-```
-
-**失败原因**：Pinia store 内部状态不直接暴露笔记列表，Vue 组件树中也找不到包含所有笔记 ID 的数据源。
-
-### ❌ 递归 setTimeout 链
-
-```javascript
-// 不要这样做！和 async/await 一样会被重渲染杀死
-window.__processNext = function(i) {
-  setTimeout(function() { /* ... */ window.__processNext(i+1); }, 1000);
-};
-```
-
-**失败原因**：同上，setTimeout 回调在页面重渲染后不会触发。
-
----
-
-## 正确的执行策略
-
-核心原则：**一步一确认，每步都是独立的工具调用**。
-
-不要试图用聪明的脚本一次搞定。用最朴素的方式逐步推进，每一步都确认结果。虽然慢（64 篇约需 200 次工具调用），但每一步都是确定性的、可验证的。
-
-### 第一步：打开知识库页面
-
-用浏览器工具导航到用户提供的 biji.com/subject/... URL，记录 tabId。
-
-### 第二步：确认笔记数量并处理虚拟滚动
+### 第二步：确认笔记数量
 
 ```javascript
 document.querySelectorAll('.sider-list-item').length
 ```
 
-如果返回的数量小于用户说的总数，说明虚拟滚动没有加载全部项目。需要先滚动侧边栏加载更多：
+如果数量不足，滚动侧边栏加载更多：
+```javascript
+var s = document.querySelector('.sider-list-item').closest('[class*=overflow]');
+s.scrollTop = s.scrollHeight;
+```
+
+### 第三步：XHR 劫持 — 捕获认证头
+
+这是核心技巧。拦截页面自己的 XMLHttpRequest，捕获完整的认证请求头：
 
 ```javascript
-// 找到侧边栏的滚动容器并滚动到底部
-var scroller = document.querySelector('.sider-list-item').closest('[class*=overflow]');
-scroller.scrollTop = scroller.scrollHeight;
+(function() {
+  window.__capturedHeaders = {};
+  window.__capturedRequests = [];
+  var origOpen = XMLHttpRequest.prototype.open;
+  var origSetHeader = XMLHttpRequest.prototype.setRequestHeader;
+  var origSend = XMLHttpRequest.prototype.send;
+  
+  XMLHttpRequest.prototype.open = function(method, url) {
+    this.__url = url; this.__method = method; this.__headers = {};
+    return origOpen.apply(this, arguments);
+  };
+  XMLHttpRequest.prototype.setRequestHeader = function(name, value) {
+    this.__headers[name] = value;
+    window.__capturedHeaders[name] = value;
+    return origSetHeader.apply(this, arguments);
+  };
+  XMLHttpRequest.prototype.send = function(body) {
+    if (this.__url && this.__url.includes('knowledge-api')) {
+      window.__capturedRequests.push({
+        method: this.__method, url: this.__url,
+        headers: Object.assign({}, this.__headers), body: body
+      });
+    }
+    return origSend.apply(this, arguments);
+  };
+  return 'XHR interceptor installed';
+})()
 ```
 
-等待 1-2 秒后再次检查数量。重复直到数量匹配。
+### 第四步：触发页面自己的 API 请求
 
-### 第三步：初始化 URL 收集器
+点击侧边栏笔记，让页面发出带认证头的 XHR 请求：
 
 ```javascript
-(window.__allUrls = [])
-  && (window.__origOpen = window.__origOpen || window.open)
-  && (window.open = function(url) { window.__urls.push(url); return null; })
-  && (window.__urls = [])
-  && 'initialized'
+document.querySelectorAll('.sider-list-item')[1].click()
 ```
 
-### 第四步：逐篇拦截原始 URL
-
-对每篇笔记，执行以下 3 个独立工具调用（不要合并）：
-
-**调用 1 — 切换笔记并保存上一篇 URL**：
-```javascript
-// 如果是第一篇，不需要 push
-window.__allUrls.push("上一篇的URL") && document.querySelectorAll('.sider-list-item')[N].click()
-```
-
-**调用 2 — 重设拦截器并点击灰色区块**：
-```javascript
-(window.open = function(url) { window.__urls.push(url); return null; })
-  && (window.__urls = [])
-  && (document.querySelector('.cursor-pointer.rounded-lg.bg-gray-F5F6F7').click())
-  && 'ok'
-```
-
-**调用 3 — 读取拦截到的 URL**：
-```javascript
-JSON.stringify(window.__urls)
-```
-
-URL 格式为 `/post/{subjectId}/{postId}/web`。
-
-**为什么必须分 3 步？** 因为点击侧边栏后页面需要时间重渲染，灰色区块必须等渲染完成后才能点击。合并成一步会导致灰色区块找不到元素。
-
-### 第五步：URL 去重
-
-收集完所有 URL 后，检查重复：
+### 第五步：读取捕获的认证头
 
 ```javascript
-JSON.stringify([...new Set(window.__allUrls)])
+JSON.stringify(Object.keys(window.__capturedHeaders))
 ```
 
-### 第六步：批量提取完整原文
+应包含：`Authorization`, `Xi-Csrf-Token`, `X-Request-ID`, `x-d`, `Xi-App-Client-Source`, `X-Appid`, `X-Av` 等。
 
-用子 Agent 或浏览器导航工具 (`tabs_create_mcp` + `navigate`) 逐个访问拦截到的 URL：
+### 第六步：API 批量获取笔记列表 + AI 总结
 
-```
-https://www.biji.com{intercepted_path}
-```
+**获取笔记列表**（需要同时传 `follow_id` 和 `topic_id`，缺一不可）：
 
-在每个原始笔记页上读取内容（导航后等待 2 秒）：
+从 URL 参数中提取 `followId`，从 API 响应中提取 `topic_id`。
 
 ```javascript
-document.querySelector('main').innerText
+(function() {
+  var h = window.__capturedHeaders;
+  var xhr = new XMLHttpRequest();
+  // follow_id 从 URL 参数获取，topic_id 从 resource/list API 响应获取
+  xhr.open('POST', 'https://knowledge-api.trytalks.com/v1/web/follow/account/posts', false);
+  // 设置所有捕获的请求头
+  Object.keys(h).forEach(function(k) { xhr.setRequestHeader(k, h[k]); });
+  xhr.setRequestHeader('X-Request-ID', Date.now().toString());
+  xhr.send(JSON.stringify({follow_id: FOLLOW_ID, topic_id: TOPIC_ID, page: 1, page_size: 100}));
+  var data = JSON.parse(xhr.responseText);
+  var posts = data.c.posts;
+  window.__allNotes = posts.map(function(p) {
+    return { id: p.post_id_str, title: p.post_name };
+  });
+  return JSON.stringify({total: window.__allNotes.length});
+})()
 ```
 
-页面结构为：标题 → 原链接（抖音） → 完整原文正文。
-
-如果 `main.innerText` 为空，重试一次（SPA 加载可能需要更多时间）。
-
-### 第七步：提取 AI 总结
-
-回到主知识库页面，逐篇切换侧边栏笔记，读取 main 区域内容：
+**批量获取每篇笔记的 AI 总结**：
 
 ```javascript
-// 切换笔记
-document.querySelectorAll('.sider-list-item')[N].click()
-// 等待渲染后读取
-document.querySelector('main').innerText
+(function() {
+  var h = window.__capturedHeaders;
+  var notes = window.__allNotes;
+  var results = [];
+  for (var i = 0; i < notes.length; i++) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://knowledge-api.trytalks.com/v1/web/topic/post/detail', false);
+    Object.keys(h).forEach(function(k) { xhr.setRequestHeader(k, h[k]); });
+    xhr.setRequestHeader('X-Request-ID', Date.now().toString() + i);
+    xhr.send(JSON.stringify({topic_id: -1, topic_id_alias: 'pn53x8p0', post_id: notes[i].id}));
+    var d = JSON.parse(xhr.responseText).c;
+    results.push({id: notes[i].id, title: d.post_name, summary: d.post_summary || ''});
+  }
+  window.__allDetails = results;
+  return JSON.stringify({total: results.length, withSummary: results.filter(function(r){return r.summary}).length});
+})()
 ```
 
-内容包含 emoji 标记的分类（💡 核心观点、🎯 策略方法、💎 关键需求、🔑 核心要点等）。
+### 第七步：iframe 并行加载获取原文
 
-**虚拟滚动注意**：如果笔记数超过 ~50 篇，侧边栏的虚拟滚动只会渲染前 50 个项目的 DOM。提取 AI 总结时需要分批：先提取前 50 篇的总结，然后滚动侧边栏加载剩余项目，再提取剩余的。
+每次并行 5 个 iframe，每个等待 6 秒：
 
-### 第八步：组装输出
+```javascript
+(function() {
+  var notes = window.__allNotes;
+  var batchSize = 5;
+  window.__iframeResults = {};
+  
+  function loadBatch(start) {
+    if (start >= notes.length) { window.__iframeDone = true; return; }
+    var end = Math.min(start + batchSize, notes.length);
+    var iframes = [];
+    for (var i = start; i < end; i++) {
+      var iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.id = 'batch-iframe-' + i;
+      iframe.src = 'https://www.biji.com/post/pn53x8p0/' + notes[i].id + '/web';
+      document.body.appendChild(iframe);
+      iframes.push({index: i, iframe: iframe});
+    }
+    setTimeout(function() {
+      for (var j = 0; j < iframes.length; j++) {
+        var item = iframes[j];
+        try {
+          var doc = item.iframe.contentDocument || item.iframe.contentWindow.document;
+          var main = doc.querySelector('main');
+          if (main) { window.__iframeResults[item.index] = main.innerText; }
+        } catch(e) { window.__iframeResults[item.index] = '__ERROR__'; }
+        item.iframe.remove();
+      }
+      loadBatch(end);
+    }, 6000);
+  }
+  loadBatch(0);
+  return 'batch iframe loading started for ' + notes.length + ' notes';
+})()
+```
 
-将完整原文 + AI 总结写入 markdown 文件，每篇笔记格式：
+等待完成（笔记数 / 5 × 6 秒）后检查：
+```javascript
+JSON.stringify({done: window.__iframeDone, count: Object.keys(window.__iframeResults).length})
+```
 
+### 第八步：清洗 + 组装
+
+用 Python 脚本处理（比浏览器 JS 更可靠）：
+
+```python
+import re
+
+def clean_note(text):
+    # 去除"得到大脑"前缀
+    if text.startswith('得到大脑'): text = text[4:]
+    # 去除标题+抖音链接（URL-char-only 正则，不吞中文正文）
+    url_match = re.search(r'原链接：https?://[a-zA-Z0-9?&=%.\-_~:/\[\]@!$\'()*+,;]+', text)
+    if url_match: text = text[url_match.end():]
+    # 去除尾部噪声
+    for marker in ['当前网页无法显示', '当前知识库由于作者设置']:
+        idx = text.find(marker)
+        if idx >= 0: text = text[:idx]
+    return text.strip()
+```
+
+组装 Markdown：
 ```markdown
 ## 笔记N：标题
 
 **完整原文：**
-
-（从原始笔记页提取的完整正文）
+（清洗后的原文）
 
 **AI总结分析：**
-
-（从主页面提取的 AI 总结）
+（API 返回的 summary）
 
 ---
 ```
 
 ---
 
-## 关键 DOM 选择器
+## 关键参数速查
 
-| 元素 | 选择器 |
-|------|--------|
-| 侧边栏笔记列表项 | `.sider-list-item` |
-| 灰色链接区块（含完整原文入口） | `.cursor-pointer.rounded-lg.bg-gray-F5F6F7` |
-| 笔记标题 | `.note-title` |
-| AI 总结内容 | `.note-content` |
-| 主内容区 | `main` |
+| 参数 | 来源 |
+|------|------|
+| `follow_id` | URL 参数 `followId=...` |
+| `topic_id` | `resource/list/mix` API 响应中的 `current_directory.topic_id` |
+| `topic_id_alias` | URL 路径中的 `pn53x8p0` 等 |
+| 笔记页 URL | `https://www.biji.com/post/{alias}/{post_id}/web` |
 
-## 常见陷阱与排查
+## 常见陷阱
 
 详见 [references/troubleshooting.md](references/troubleshooting.md)。
 
 ## 注意事项
 
 - 原文来自抖音视频语音转文字，存在同音字转录误差，保持原文不改
-- 原始笔记页包含一个抖音原链接，可记录但不需要访问
-- 每次切换笔记后 window.open 拦截器会失效，必须重新设置
-- 用 `tabs_create_mcp` 创建新标签页访问原始笔记，避免弹窗拦截问题
-- 收集完 URL 后务必去重，手动补漏时容易产生重复项
-- 推荐用子 Agent 处理第六步（批量提取原文），避免主会话上下文过长
+- 短原文（200-700字）不等于截断 — 短视频的语音转文字自然就这么短
+- 清洗正则 必须用 URL-char-only 字符集，不能用 `\S+`（会吞掉紧连的中文正文）
+- `follow/account/posts` API 必须同时传 `follow_id` 和 `topic_id`，缺一不可
+- iframe 比新标签页更可靠（继承父页面认证上下文）
+- 推荐用子 Agent 处理数据导出，避免主会话上下文过长
 
 ---
 
@@ -230,9 +250,11 @@ document.querySelector('main').innerText
 
 _Accumulated from real usage. Each entry records a pattern discovered during iteration._
 
-- **2026-07-06 (v2.0.0)**: SPA 页面中的异步批量脚本（async/await + setTimeout）100% 会被 Vue 重渲染杀死。唯一可靠的方式是"一步一确认"——每步作为独立工具调用。实测 64 篇笔记用 async 脚本只跑了 12 篇就卡死，改用逐步调用后 100% 成功。
-- **2026-07-06 (v2.0.0)**: biji.com API（knowledge-api.trytalks.com）无法从浏览器 JS 环境直接调用，无论用 fetch 还是 XHR，无论是否带 credentials。API 有内部认证机制，只能通过页面交互间接获取数据。
-- **2026-07-06 (v2.0.0)**: 侧边栏使用虚拟滚动，DOM 中只渲染 ~50 个项目。超过 50 篇的知识库需要先滚动侧边栏加载剩余项目，否则无法访问后面的笔记。
-- **2026-07-06 (v2.0.0)**: 浏览器 JS 工具中 `const`/`let` 赋值返回 `undefined`，必须用 `&&` 链式表达式。这是工具层面的限制，不是 JS 本身的行为。
-- **2026-07-06 (v2.0.0)**: 手动补漏时容易产生 URL 重复。收集完所有 URL 后必须用 `Set` 去重，否则会导致重复提取和文件内容重复。
-- **2026-07-06 (v2.0.0)**: 推荐将"批量提取原文"步骤交给子 Agent 处理。64 篇笔记的原文提取会产生大量工具调用，在主会话中执行会导致上下文膨胀。子 Agent 可以独立处理并在完成后返回结果。
+- **2026-07-06 (v3.0.0)**: XHR 劫持是正确路线。拦截 `XMLHttpRequest.prototype.setRequestHeader` 可捕获完整认证头（Authorization + CSRF Token 等 9 个），然后用这些头直接调 API 批量获取数据。裸调 API 会失败（CORS + 无认证），但带捕获头的重放调用 100% 成功。
+- **2026-07-06 (v3.0.0)**: iframe 并行加载（5路 × 6秒/批）比逐页导航快 3-4 倍，且比新标签页更可靠（继承父页面认证上下文）。实测 24 篇笔记分 5 批共 30 秒完成。
+- **2026-07-06 (v3.0.0)**: `follow/account/posts` API 必须同时传 `follow_id`（从 URL 参数获取）和 `topic_id`（从 resource/list API 响应获取），缺一不可。单独传 `follow_id` 会返回"知识库不存在"。
+- **2026-07-06 (v3.0.0)**: 清洗正则必须用 URL-char-only 字符集 `[a-zA-Z0-9?&=%.\-_~:/...]+`，绝不能用 `\S+`。后者会匹配 URL 后面紧连的中文字符，导致正文被误删。
+- **2026-07-06 (v3.0.0)**: 短原文（200-700字）不等于截断。短视频的语音转文字自然就这么短。不要用长度阈值判断完整性，应让用户确认。
+- **2026-07-06 (v3.0.0)**: SPA 页面中的异步批量脚本（async/await + setTimeout）100% 会被 Vue 重渲染杀死。唯一可靠的浏览器端批量方式是同步 XHR 循环（在单条 JS 执行内完成，不涉及异步回调）。
+- **2026-07-06 (v2.0.0)**: 浏览器 JS 工具中 `const`/`let` 赋值返回 `undefined`，必须用 `&&` 链式表达式。
+- **2026-07-06 (v2.0.0)**: 推荐将数据导出步骤交给子 Agent，避免主会话上下文膨胀。
