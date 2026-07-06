@@ -14,6 +14,8 @@
 | [**kv-sanity-auditor**](skills/kv-sanity-auditor/) | 苛刻产品体验官 | 六视角融合审查 AI 产品的体验完整性 |
 | [**kv-ai-comic-style**](skills/kv-ai-comic-style/) | AI三反骨 — 漫画 IP 生产流 | 把 AI / Agent / Workflow / OPC 等概念转成三账号漫画、暗线剧情、视频提示词与图像提示词 |
 | [**kv-xuanlight-aesthetic**](skills/kv-xuanlight-aesthetic/) | 玄光美学风格系统 | 将普通视觉需求系统化转译为诗性、神性微光、低清颗粒的玄光视觉语言 |
+| [**kv-biji-note-extractor**](skills/kv-biji-note-extractor/) | 得到笔记提取器 | 从 biji.com 知识库批量提取笔记完整原文 + AI 总结，含反模式警告与实战经验沉淀 |
+| [**kv-goal-loop**](skills/kv-goal-loop/) | 自主循环执行引擎 | 高层目标 → 计划→执行→验证→评估→迭代，自主循环直到达成，含停滞检测与上下文压缩 |
 
 ---
 
@@ -31,6 +33,8 @@ npx skillkit add Kvxw1105/kv-clarity-mirror
 npx skillkit add Kvxw1105/kv-sanity-auditor
 npx skillkit add Kvxw1105/kv-ai-comic-style
 npx skillkit add Kvxw1105/kv-xuanlight-aesthetic
+npx skillkit add Kvxw1105/kv-biji-note-extractor
+npx skillkit add Kvxw1105/kv-goal-loop
 ```
 
 或用 `skills` CLI：
@@ -39,6 +43,8 @@ npx skillkit add Kvxw1105/kv-xuanlight-aesthetic
 npx skills add Kvxw1105/kv-sanity-auditor
 npx skills add Kvxw1105/kv-ai-comic-style
 npx skills add Kvxw1105/kv-xuanlight-aesthetic
+npx skills add Kvxw1105/kv-biji-note-extractor
+npx skills add Kvxw1105/kv-goal-loop
 ```
 
 ---
@@ -74,6 +80,8 @@ npx skills add Kvxw1105/kv-xuanlight-aesthetic
 - **验收质量** → `kv-sanity-auditor`
 - **做风格系统化表达** → `kv-xuanlight-aesthetic`
 - **做连续漫画内容生产** → `kv-ai-comic-style`
+- **提取得到笔记** → `kv-biji-note-extractor`
+- **自主循环执行目标** → `kv-goal-loop`
 
 ---
 
