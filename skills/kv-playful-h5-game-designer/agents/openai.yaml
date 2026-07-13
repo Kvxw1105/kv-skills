@@ -1,0 +1,4 @@
+interface:
+  display_name: "轻趣 H5 游戏设计师"
+  short_description: "用中文创建和迭代小而美的移动端 H5 小游戏"
+  default_prompt: "用轻趣 H5 游戏设计师把我的想法做成可直接试玩的手机 H5，并完成移动端、动效、音效、夜间模式和状态逻辑验收。"

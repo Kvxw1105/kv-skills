@@ -16,6 +16,7 @@
 | [**kv-xuanlight-aesthetic**](skills/kv-xuanlight-aesthetic/) | 玄光美学风格系统 | 将普通视觉需求系统化转译为诗性、神性微光、低清颗粒的玄光视觉语言 |
 | [**kv-biji-note-extractor**](skills/kv-biji-note-extractor/) | 得到笔记提取器 | 从 biji.com 知识库批量提取笔记完整原文 + AI 总结，含反模式警告与实战经验沉淀 |
 | [**kv-goal-loop**](skills/kv-goal-loop/) | 自主循环执行引擎 | 高层目标 → 计划→执行→验证→评估→迭代，自主循环直到达成，含停滞检测与上下文压缩 |
+| [**kv-playful-h5-game-designer**](skills/kv-playful-h5-game-designer/) | 轻趣 H5 游戏设计师 | 中文调度移动端轻游戏，沉淀单屏适配、平滑动效、反馈系统、日夜模式与状态验收 |
 
 ---
 
@@ -35,6 +36,7 @@ npx skillkit add Kvxw1105/kv-ai-comic-style
 npx skillkit add Kvxw1105/kv-xuanlight-aesthetic
 npx skillkit add Kvxw1105/kv-biji-note-extractor
 npx skillkit add Kvxw1105/kv-goal-loop
+npx skillkit add Kvxw1105/kv-playful-h5-game-designer
 ```
 
 或用 `skills` CLI：
@@ -45,6 +47,7 @@ npx skills add Kvxw1105/kv-ai-comic-style
 npx skills add Kvxw1105/kv-xuanlight-aesthetic
 npx skills add Kvxw1105/kv-biji-note-extractor
 npx skills add Kvxw1105/kv-goal-loop
+npx skills add Kvxw1105/kv-playful-h5-game-designer
 ```
 
 ---
@@ -64,6 +67,9 @@ npx skills add Kvxw1105/kv-goal-loop
      kv-xuanlight-aesthetic      kv-ai-comic-style
        （玄光美学风格系统）      （AI三反骨漫画 IP 生产流）
 
+          kv-playful-h5-game-designer
+      （移动端轻游戏设计、实现与迭代）
+
            xw-skill-creator（私人元技能，不在此仓库）
           （创建新技能的心吾版生产工具）
 ```
@@ -73,6 +79,7 @@ npx skills add Kvxw1105/kv-goal-loop
 - **sanity-auditor** 帮你验收 AI 产出的体验完整性
 - **xuanlight-aesthetic** 帮你把视觉需求提升成完整风格系统，而不是一条普通 prompt
 - **ai-comic-style** 帮你把抽象 AI/商业概念转成可持续生产的漫画内容宇宙
+- **playful-h5-game-designer** 帮你把中文游戏想法快速做成可试玩、可迭代、可验收的手机 H5
 
 你可以这样理解当前公开技能线：
 - **想深** → `kv-insight-engine`
@@ -82,6 +89,13 @@ npx skills add Kvxw1105/kv-goal-loop
 - **做连续漫画内容生产** → `kv-ai-comic-style`
 - **提取得到笔记** → `kv-biji-note-extractor`
 - **自主循环执行目标** → `kv-goal-loop`
+- **做小而美的移动端 H5 游戏** → `kv-playful-h5-game-designer`
+
+---
+
+## 在线示例
+
+- [轻趣 H5 游戏设计师：每日 12 词 starter](https://kvxw1105.github.io/kv-skills/playful-h5/)
 
 ---
 
