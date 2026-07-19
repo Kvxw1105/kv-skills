@@ -1,0 +1,12 @@
+interface:
+  display_name: KV Business Opportunity Strategist
+  short_description: Turn ideas into falsifiable commercial theses and tests.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

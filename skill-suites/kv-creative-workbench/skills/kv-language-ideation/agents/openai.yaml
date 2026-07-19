@@ -1,0 +1,12 @@
+interface:
+  display_name: KV Language Ideation
+  short_description: Reframe the question and generate mechanism-level ideas.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

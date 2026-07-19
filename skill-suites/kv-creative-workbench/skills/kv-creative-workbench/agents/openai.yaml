@@ -1,0 +1,12 @@
+interface:
+  display_name: KV Creative Workbench
+  short_description: Route ideas from fuzzy framing to a testable decision.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

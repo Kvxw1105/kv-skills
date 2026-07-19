@@ -1,0 +1,29 @@
+name: kv-creative-workbench-suite
+version: 1.0.0
+entrypoint: kv-creative-workbench
+members:
+  - kv-creative-workbench
+  - kv-language-ideation
+  - kv-idea-convergence
+  - kv-business-opportunity-strategist
+stages:
+  - intake
+  - frame
+  - diverge
+  - converge
+  - validate
+  - decide
+return_signals:
+  - REFRAME_ROOT
+  - EXPAND_DIVERSITY
+  - REFRAME_TARGET_USER
+  - SPLIT_USER_PAYER
+  - PRESERVE_CORE_CHANGE_FORM
+  - REDUCE_SCOPE
+  - REVALIDATE_DEMAND
+  - REDESIGN_DISTRIBUTION
+  - USER_GOAL_NONCOMMERCIAL
+  - STOP_NO_OPPORTUNITY
+  - READY_FOR_DECISION
+install_mode: individual-skill-packages
+schema: IdeaCase-v1.0
