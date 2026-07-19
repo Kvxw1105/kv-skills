@@ -1,0 +1,12 @@
+{
+  "bundle": "xinwu-public-skills-bundle",
+  "version": "2026.07.20",
+  "repository": "Kvxw1105/kv-skills",
+  "install": "npx skills add Kvxw1105/kv-skills --skill '*' --agent codex --global --yes --full-depth",
+  "policy": {
+    "visibility": "public",
+    "exclude_secrets": true,
+    "preserve_licenses": true,
+    "one_skill_one_entrypoint": true
+  }
+}
