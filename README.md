@@ -9,6 +9,7 @@
 
 | 技能 | 定位 | 核心能力 |
 |------|------|---------|
+| [**KV Creative Workbench Suite**](skill-suites/kv-creative-workbench/) | 创意决策组合技 | 从问题重构、创意发散、独立收敛到机会验证与决策，支持回流和选择性重跑 |
 | [**kv-insight-engine**](skills/kv-insight-engine/) | 洞察引擎 — 深度思考放大器 | 提纯问题、拉高判断、交付更强方案 |
 | [**kv-clarity-mirror**](skills/kv-clarity-mirror/) | 清晰镜 — AI 盲区检查器 | 运行时自检，在交付前捕获最可能翻车的地方 |
 | [**kv-sanity-auditor**](skills/kv-sanity-auditor/) | 苛刻产品体验官 | 六视角融合审查 AI 产品的体验完整性 |
@@ -20,12 +21,27 @@
 
 ---
 
+## 组合技
+
+### KV Creative Workbench Suite
+
+这是一组放在同一母目录中的四件套：
+
+- `kv-creative-workbench`：总控、状态、路由、回流与最终决策
+- `kv-language-ideation`：语言框架、问题重构与创意发散
+- `kv-idea-convergence`：独立盲审、创意核提取、保核换形与收敛
+- `kv-business-opportunity-strategist`：用户/付费者、需求、分发、MVP、实验与杀死标准
+
+它们可以独立安装，也可以通过共享的 IdeaCase、候选 ID 和返回信号组成完整工作流。详见 [技能组母目录](skill-suites/kv-creative-workbench/)。
+
+---
+
 ## 安装
 
-所有技能支持以下方式安装：
+所有独立技能支持以下方式安装：
 
 ```bash
-# 安装全部
+# 安装全部独立技能
 npx skillkit add Kvxw1105/kv-skills
 
 # 或安装单个
@@ -50,11 +66,28 @@ npx skills add Kvxw1105/kv-goal-loop
 npx skills add Kvxw1105/kv-playful-h5-game-designer
 ```
 
+ChatGPT 当前按单个 Skill 包上传。组合技请进入母目录，将 `skills/` 下四个目录分别打包和安装。
+
 ---
 
 ## 体系关系
 
 ```text
+       kv-language-ideation
+       （重构问题与发散）
+                |
+                v
+       kv-idea-convergence
+       （盲审、改造与收敛）
+                |
+                v
+kv-business-opportunity-strategist
+    （机会验证与实验设计）
+                |
+                v
+       kv-creative-workbench
+   （总控、回流、选择性重跑）
+
            kv-insight-engine           kv-clarity-mirror
           （能力放大）                  （盲区检查）
                   \                      /
@@ -74,6 +107,7 @@ npx skills add Kvxw1105/kv-playful-h5-game-designer
           （创建新技能的心吾版生产工具）
 ```
 
+- **creative-workbench-suite** 帮你把模糊想法推进到可判断、可验证、可行动的方向
 - **insight-engine** 帮你把答案做得更深、更强
 - **clarity-mirror** 帮你交付前检查盲区
 - **sanity-auditor** 帮你验收 AI 产出的体验完整性
@@ -82,6 +116,8 @@ npx skills add Kvxw1105/kv-playful-h5-game-designer
 - **playful-h5-game-designer** 帮你把中文游戏想法快速做成可试玩、可迭代、可验收的手机 H5
 
 你可以这样理解当前公开技能线：
+
+- **从模糊想法到决策** → `KV Creative Workbench Suite`
 - **想深** → `kv-insight-engine`
 - **查漏** → `kv-clarity-mirror`
 - **验收质量** → `kv-sanity-auditor`
@@ -101,6 +137,7 @@ npx skills add Kvxw1105/kv-playful-h5-game-designer
 
 ## 工作流文档
 
+- [KV Creative Workbench Suite：创意决策组合工作流](skill-suites/kv-creative-workbench/)
 - [AI三反骨：白卷羊 / 懒团团 / 灰策狼漫画宇宙工作流](workflows/ai-sanfangu-comic-universe-workflow.md)
 
 ---
@@ -109,3 +146,4 @@ npx skills add Kvxw1105/kv-playful-h5-game-designer
 
 - **具体而非抽象**：每个技能给出可直接执行的检查点，而非泛泛建议
 - **开源生态意识**：发现问题时指出社区已有方案，不重复造轮子
+- **组合而不耦死**：组合技共享协议与状态，同时保持每个子 Skill 可单独安装、测试和升级
