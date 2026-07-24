@@ -1,0 +1,4 @@
+interface:
+  display_name: "KV Frontend Upgrade Director"
+  short_description: "Upgrade frontend products with visual systems, interaction design, WebGL and QA workflows."
+  icon: "✨"
