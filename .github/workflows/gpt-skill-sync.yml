@@ -1,0 +1,57 @@
+name: GPT Skill Sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - skill-sync/TRIGGER
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gpt-skill-sync-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  restore-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reassemble and verify archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat skill-sync/archive.part-* | base64 -d > /tmp/gpt-skills.tar.gz
+          echo "2794f8e1c8d7d64acca9c4ae9276ae05854c493decf0d78762d09f861721bd38  /tmp/gpt-skills.tar.gz" | sha256sum -c -
+
+      - name: Restore skill directories
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -xzf /tmp/gpt-skills.tar.gz -C .
+          test "$(find skills -mindepth 1 -maxdepth 1 -type d | wc -l)" -ge 17
+          for d in skills/*; do
+            [ -d "$d" ] || continue
+            [ -f "$d/SKILL.md" ] || { echo "Missing SKILL.md: $d"; exit 1; }
+          done
+
+      - name: Commit restored skills
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf skill-sync
+          rm -f .github/workflows/gpt-skill-sync.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "sync: import current GPT public skills"
+          git push origin HEAD:${GITHUB_REF_NAME}
