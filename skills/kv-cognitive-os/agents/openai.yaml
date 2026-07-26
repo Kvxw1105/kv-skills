@@ -1,0 +1,6 @@
+name: kv-cognitive-os
+description: 常驻认知操作系统 - 认知地板 + 技能编排意识
+version: 1.0.0
+instructions: SKILL.md
+tools:
+  - mcp/server.py
