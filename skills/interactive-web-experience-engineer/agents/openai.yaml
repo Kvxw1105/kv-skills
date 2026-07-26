@@ -1,0 +1,13 @@
+interface:
+  display_name: 互动网页体验工程师
+  short_description: 高审美 H5、小游戏与灵光提示词的工程实现和验收
+  brand_color: '#FF6B35'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

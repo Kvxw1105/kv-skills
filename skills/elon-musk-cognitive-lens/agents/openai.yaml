@@ -1,0 +1,12 @@
+interface:
+  display_name: 埃隆·马斯克认知镜
+  short_description: 以其经历、立场、认知与表达声纹分析和创作
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

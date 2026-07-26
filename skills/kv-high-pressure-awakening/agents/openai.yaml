@@ -1,0 +1,14 @@
+interface:
+  display_name: High-Pressure Awakening
+  short_description: Mine explosive hooks and build high-pressure motivational scripts.
+  default_prompt: Analyze or create high-pressure awakening copy with controlled emotional
+    pressure, strong hooks, concrete action, and distinct character voices.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

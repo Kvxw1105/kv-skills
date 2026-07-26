@@ -18,6 +18,21 @@
 | [**kv-biji-note-extractor**](skills/kv-biji-note-extractor/) | 得到笔记提取器 | 从 biji.com 知识库批量提取笔记完整原文 + AI 总结，含反模式警告与实战经验沉淀 |
 | [**kv-goal-loop**](skills/kv-goal-loop/) | 自主循环执行引擎 | 高层目标 → 计划→执行→验证→评估→迭代，自主循环直到达成，含停滞检测与上下文压缩 |
 | [**kv-playful-h5-game-designer**](skills/kv-playful-h5-game-designer/) | 轻趣 H5 游戏设计师 | 中文调度移动端轻游戏，沉淀单屏适配、平滑动效、反馈系统、日夜模式与状态验收 |
+| [**kv-frontend-upgrade-director**](skills/kv-frontend-upgrade-director/) | 前端升级导演 | 非破坏性前端产品升级，模块化 prompt 系统，设计令牌与信息层级 |
+| [**interactive-web-experience-engineer**](skills/interactive-web-experience-engineer/) | 交互 Web 体验工程师 | 自适应 H5 交互体验，含灵光 prompt 中继与进化协议 |
+| [**one-click-web-preview**](skills/one-click-web-preview/) | 一键 Web 预览 | 单文件 HTML 打包与本地预览，含质量检查清单 |
+| [**frontend-slides**](skills/frontend-slides/) | 前端幻灯片 | 纯 HTML/CSS/JS 演示文稿，含动画模式、PDF 导出与 PPTX 提取 |
+| [**make-paper-collage-video**](skills/make-paper-collage-video/) | 纸艺拼贴视频 | 剪纸风格定格动画视频制作，含便携运行时与审批门 |
+| [**ai-comic-style**](skills/ai-comic-style/) | AI 漫画风格 | AI 漫画设计系统与 prompt 模板工作流 |
+| [**kv-high-pressure-awakening**](skills/kv-high-pressure-awakening/) | 高压唤醒文案 | 高张力认知觉醒文案，含金句挖掘、角色适配与反模式检查 |
+| [**kv-cinematic-intelligence-narrative**](skills/kv-cinematic-intelligence-narrative/) | 电影感智识叙事 | 知识类电影感叙事视频，含悬念信息、经典故事模式与配音 |
+| [**humor-writer**](skills/humor-writer/) | 幽默写手 | 幽默机制研究与场景化喜剧写作 |
+| [**elon-musk-cognitive-lens**](skills/elon-musk-cognitive-lens/) | 马斯克认知透镜 | 马斯克思维模型模拟，含证据账本与立场图谱 |
+| [**ding-yuanying-cognitive-lens**](skills/ding-yuanying-cognitive-lens/) | 丁元英认知透镜 | 丁元英思维模型模拟，含声纹画像与综合笔记 |
+| [**shanghai-primary-math-generator**](skills/shanghai-primary-math-generator/) | 上海小学数学出题器 | 上海课标小学数学题目生成，含课程范围与出题规则 |
+| [**kv-goal-loop-chatgpt**](skills/kv-goal-loop-chatgpt/) | 自主循环引擎 (GPT 版) | ChatGPT 运行时适配的目标自主循环执行 |
+| [**playful-h5-game-designer**](skills/playful-h5-game-designer/) | 轻趣 H5 游戏设计师 (GPT 版) | 含完整 starter 模板的移动端轻游戏设计 |
+| [**xuanlight-aesthetic**](skills/xuanlight-aesthetic/) | 玄光美学 (GPT 版) | 玄光美学风格系统，含分支判断与 prompt 库 |
 
 ---
 

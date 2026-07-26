@@ -1,0 +1,12 @@
+interface:
+  display_name: KV Goal Loop for ChatGPT
+  short_description: Execute and verify complex goals in a bounded same-turn loop.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

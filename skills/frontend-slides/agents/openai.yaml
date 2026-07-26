@@ -1,0 +1,15 @@
+interface:
+  display_name: Frontend Slides
+  short_description: Create distinctive HTML presentations and convert PPTX content
+    into web slides.
+  icon: 🖥️
+  color: blue
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

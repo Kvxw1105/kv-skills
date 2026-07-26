@@ -1,0 +1,13 @@
+interface:
+  display_name: 轻趣 H5 游戏设计师
+  short_description: 设计、迭代并验收自适应的移动端 H5 小游戏
+  brand_color: '#F19A54'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
