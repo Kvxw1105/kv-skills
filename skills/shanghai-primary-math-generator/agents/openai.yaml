@@ -1,0 +1,14 @@
+interface:
+  display_name: 上海小学数学命题
+  short_description: 按上海五·四学制生成小学数学练习卷、逻辑题和教师解析。
+  icon: 📐
+  brand_color: '#4f46e5'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

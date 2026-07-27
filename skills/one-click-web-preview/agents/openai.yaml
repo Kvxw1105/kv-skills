@@ -1,0 +1,12 @@
+interface:
+  display_name: 网页一键预览
+  short_description: 设计、开发并交付点开即用的网页预览
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
