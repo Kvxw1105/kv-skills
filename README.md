@@ -10,140 +10,57 @@
 | 技能 | 定位 | 核心能力 |
 |------|------|---------|
 | [**KV Creative Workbench Suite**](skill-suites/kv-creative-workbench/) | 创意决策组合技 | 从问题重构、创意发散、独立收敛到机会验证与决策，支持回流和选择性重跑 |
+| [**kv-engineering-reasoning-harness**](skills/kv-engineering-reasoning-harness/) | 工程推理与接力增强器 | 让编码 Agent 核验真实状态、规划任务、控制改动、验证结果并完成跨节点接力 |
 | [**kv-insight-engine**](skills/kv-insight-engine/) | 洞察引擎 — 深度思考放大器 | 提纯问题、拉高判断、交付更强方案 |
 | [**kv-clarity-mirror**](skills/kv-clarity-mirror/) | 清晰镜 — AI 盲区检查器 | 运行时自检，在交付前捕获最可能翻车的地方 |
 | [**kv-sanity-auditor**](skills/kv-sanity-auditor/) | 苛刻产品体验官 | 六视角融合审查 AI 产品的体验完整性 |
 | [**kv-ai-comic-style**](skills/kv-ai-comic-style/) | AI三反骨 — 漫画 IP 生产流 | 把 AI / Agent / Workflow / OPC 等概念转成三账号漫画、暗线剧情、视频提示词与图像提示词 |
 | [**kv-xuanlight-aesthetic**](skills/kv-xuanlight-aesthetic/) | 玄光美学风格系统 | 将普通视觉需求系统化转译为诗性、神性微光、低清颗粒的玄光视觉语言 |
-| [**kv-biji-note-extractor**](skills/kv-biji-note-extractor/) | 得到笔记提取器 | 从 biji.com 知识库批量提取笔记完整原文 + AI 总结，含反模式警告与实战经验沉淀 |
-| [**kv-goal-loop**](skills/kv-goal-loop/) | 自主循环执行引擎 | 高层目标 → 计划→执行→验证→评估→迭代，自主循环直到达成，含停滞检测与上下文压缩 |
-| [**kv-playful-h5-game-designer**](skills/kv-playful-h5-game-designer/) | 轻趣 H5 游戏设计师 | 中文调度移动端轻游戏，沉淀单屏适配、平滑动效、反馈系统、日夜模式与状态验收 |
-
----
-
-## 组合技
-
-### KV Creative Workbench Suite
-
-这是一组放在同一母目录中的四件套：
-
-- `kv-creative-workbench`：总控、状态、路由、回流与最终决策
-- `kv-language-ideation`：语言框架、问题重构与创意发散
-- `kv-idea-convergence`：独立盲审、创意核提取、保核换形与收敛
-- `kv-business-opportunity-strategist`：用户/付费者、需求、分发、MVP、实验与杀死标准
-
-它们可以独立安装，也可以通过共享的 IdeaCase、候选 ID 和返回信号组成完整工作流。详见 [技能组母目录](skill-suites/kv-creative-workbench/)。
+| [**kv-biji-note-extractor**](skills/kv-biji-note-extractor/) | 得到笔记提取器 | 从知识库批量提取内容并沉淀经验 |
+| [**kv-goal-loop**](skills/kv-goal-loop/) | 自主循环执行引擎 | 高层目标 → 计划 → 执行 → 验证 → 评估 → 迭代 |
+| [**kv-playful-h5-game-designer**](skills/kv-playful-h5-game-designer/) | 轻趣 H5 游戏设计师 | 移动端轻游戏设计、实现与验收 |
 
 ---
 
 ## 安装
 
-所有独立技能支持以下方式安装：
-
 ```bash
-# 安装全部独立技能
 npx skillkit add Kvxw1105/kv-skills
-
-# 或安装单个
-npx skillkit add Kvxw1105/kv-insight-engine
-npx skillkit add Kvxw1105/kv-clarity-mirror
-npx skillkit add Kvxw1105/kv-sanity-auditor
-npx skillkit add Kvxw1105/kv-ai-comic-style
-npx skillkit add Kvxw1105/kv-xuanlight-aesthetic
-npx skillkit add Kvxw1105/kv-biji-note-extractor
-npx skillkit add Kvxw1105/kv-goal-loop
-npx skillkit add Kvxw1105/kv-playful-h5-game-designer
 ```
 
-或用 `skills` CLI：
+单独安装工程推理增强器：
 
 ```bash
-npx skills add Kvxw1105/kv-sanity-auditor
-npx skills add Kvxw1105/kv-ai-comic-style
-npx skills add Kvxw1105/kv-xuanlight-aesthetic
-npx skills add Kvxw1105/kv-biji-note-extractor
-npx skills add Kvxw1105/kv-goal-loop
-npx skills add Kvxw1105/kv-playful-h5-game-designer
+npx skillkit add Kvxw1105/kv-engineering-reasoning-harness
 ```
 
-ChatGPT 当前按单个 Skill 包上传。组合技请进入母目录，将 `skills/` 下四个目录分别打包和安装。
+ChatGPT 用户也可以直接上传对应目录中的 `skill.zip`。
 
 ---
 
-## 体系关系
+## 工程推理与接力增强器
+
+`kv-engineering-reasoning-harness` 面向 Codex、ChatGPT、Claude Code、Cursor 等编码 Agent。
+
+它解决：
+
+- 项目开始前没有完整侦察，直接写代码；
+- Agent 接力时依赖旧总结，导致重复劳动或误改；
+- 规划无法验收；
+- 调试缺少根因分析；
+- 把代码修改、本地验证、commit、push、PR、CI 混成一句“完成”；
+- 项目节点结束后无法可靠交接。
+
+核心循环：
 
 ```text
-       kv-language-ideation
-       （重构问题与发散）
-                |
-                v
-       kv-idea-convergence
-       （盲审、改造与收敛）
-                |
-                v
-kv-business-opportunity-strategist
-    （机会验证与实验设计）
-                |
-                v
-       kv-creative-workbench
-   （总控、回流、选择性重跑）
-
-           kv-insight-engine           kv-clarity-mirror
-          （能力放大）                  （盲区检查）
-                  \                      /
-                   \                    /
-                    v                  v
-                    kv-sanity-auditor
-                  （产品体验验收官）
-                   /                 \
-                  v                   v
-     kv-xuanlight-aesthetic      kv-ai-comic-style
-       （玄光美学风格系统）      （AI三反骨漫画 IP 生产流）
-
-          kv-playful-h5-game-designer
-      （移动端轻游戏设计、实现与迭代）
-
-           xw-skill-creator（私人元技能，不在此仓库）
-          （创建新技能的心吾版生产工具）
+核验现状 → 明确目标 → 选择路径 → 最小实现 → 分层验证 → 反方审查 → 状态交接
 ```
-
-- **creative-workbench-suite** 帮你把模糊想法推进到可判断、可验证、可行动的方向
-- **insight-engine** 帮你把答案做得更深、更强
-- **clarity-mirror** 帮你交付前检查盲区
-- **sanity-auditor** 帮你验收 AI 产出的体验完整性
-- **xuanlight-aesthetic** 帮你把视觉需求提升成完整风格系统，而不是一条普通 prompt
-- **ai-comic-style** 帮你把抽象 AI/商业概念转成可持续生产的漫画内容宇宙
-- **playful-h5-game-designer** 帮你把中文游戏想法快速做成可试玩、可迭代、可验收的手机 H5
-
-你可以这样理解当前公开技能线：
-
-- **从模糊想法到决策** → `KV Creative Workbench Suite`
-- **想深** → `kv-insight-engine`
-- **查漏** → `kv-clarity-mirror`
-- **验收质量** → `kv-sanity-auditor`
-- **做风格系统化表达** → `kv-xuanlight-aesthetic`
-- **做连续漫画内容生产** → `kv-ai-comic-style`
-- **提取得到笔记** → `kv-biji-note-extractor`
-- **自主循环执行目标** → `kv-goal-loop`
-- **做小而美的移动端 H5 游戏** → `kv-playful-h5-game-designer`
-
----
-
-## 在线示例
-
-- [轻趣 H5 游戏设计师：每日 12 词 starter](https://kvxw1105.github.io/kv-skills/playful-h5/)
-
----
-
-## 工作流文档
-
-- [KV Creative Workbench Suite：创意决策组合工作流](skill-suites/kv-creative-workbench/)
-- [AI三反骨：白卷羊 / 懒团团 / 灰策狼漫画宇宙工作流](workflows/ai-sanfangu-comic-universe-workflow.md)
 
 ---
 
 ## 设计原则
 
-- **具体而非抽象**：每个技能给出可直接执行的检查点，而非泛泛建议
-- **开源生态意识**：发现问题时指出社区已有方案，不重复造轮子
-- **组合而不耦死**：组合技共享协议与状态，同时保持每个子 Skill 可单独安装、测试和升级
+- **具体而非抽象**：每个技能给出可直接执行的检查点，而非泛泛建议。
+- **开源生态意识**：发现问题时指出成熟方案，不重复造轮子。
+- **组合而不耦死**：每个 Skill 独立安装，同时支持体系组合。
