@@ -1,0 +1,12 @@
+interface:
+  display_name: Xuanlight Aesthetic
+  short_description: 玄光美学：低清神性幻想视觉风格体系
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

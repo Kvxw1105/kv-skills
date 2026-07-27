@@ -1,0 +1,13 @@
+interface:
+  display_name: AI Comic Style
+  short_description: Create consistent 小小羊-style Chinese AI explainer comic prompts
+    and workflows.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

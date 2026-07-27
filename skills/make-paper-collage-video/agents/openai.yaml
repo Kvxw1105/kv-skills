@@ -1,0 +1,13 @@
+interface:
+  display_name: 纸片分层视频制作
+  short_description: 制作并验证可恢复的纸片拼贴、分层视差与代码剪纸视频
+  default_prompt: 使用 $make-paper-collage-video 创建一个 balanced 档的纸片分层视频；先区分图片拼贴与代码剪纸，建立分镜、语义契约和证明时刻，再生成可验证预览。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

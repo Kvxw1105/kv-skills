@@ -1,0 +1,14 @@
+interface:
+  display_name: KV Frontend Intelligence
+  short_description: 审计、升级、实现并持续进化高质量前端体验
+  icon: ◈
+  brand_color: '#BCA16B'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,0 +1,14 @@
+interface:
+  display_name: Humor Writer
+  short_description: Generate calibrated Chinese and English humor writing.
+  icon: laugh
+  primary_color: '#7c3aed'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
