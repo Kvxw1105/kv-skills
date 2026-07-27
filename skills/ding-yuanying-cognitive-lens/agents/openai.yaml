@@ -1,0 +1,12 @@
+interface:
+  display_name: 丁元英认知镜
+  short_description: 以正典经历、立场、决策结构与声纹分析问题
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
