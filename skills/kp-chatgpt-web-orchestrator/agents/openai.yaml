@@ -1,0 +1,7 @@
+interface:
+  display_name: "ChatGPT Web Orchestrator"
+  short_description: "跨 Harness 调度已登录 ChatGPT Web 执行、续跑、验收与落盘"
+  default_prompt: "Use $kp-chatgpt-web-orchestrator to delegate suitable work to my signed-in ChatGPT Web, supervise it, verify the result, and persist useful artifacts."
+
+policy:
+  allow_implicit_invocation: true

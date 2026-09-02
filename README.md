@@ -18,6 +18,7 @@
 | [**kv-biji-note-extractor**](skills/kv-biji-note-extractor/) | 得到笔记提取器 | 从 biji.com 知识库批量提取笔记完整原文 + AI 总结，含反模式警告与实战经验沉淀 |
 | [**kv-goal-loop**](skills/kv-goal-loop/) | 自主循环执行引擎 | 高层目标 → 计划→执行→验证→评估→迭代，自主循环直到达成，含停滞检测与上下文压缩 |
 | [**kv-playful-h5-game-designer**](skills/kv-playful-h5-game-designer/) | 轻趣 H5 游戏设计师 | 中文调度移动端轻游戏，沉淀单屏适配、平滑动效、反馈系统、日夜模式与状态验收 |
+| [**kp-chatgpt-web-orchestrator**](skills/kp-chatgpt-web-orchestrator/) | ChatGPT Web 第二执行引擎总调度 | 跨 Harness 路由网页端任务、监督续跑、验收结果，并通过原生浏览器或 MCP Bridge 持久化产物 |
 
 ---
 
@@ -103,6 +104,9 @@ kv-business-opportunity-strategist
           kv-playful-h5-game-designer
       （移动端轻游戏设计、实现与迭代）
 
+          kp-chatgpt-web-orchestrator
+    （跨 Harness 调度 ChatGPT Web 第二执行引擎）
+
            xw-skill-creator（私人元技能，不在此仓库）
           （创建新技能的心吾版生产工具）
 ```
@@ -114,6 +118,7 @@ kv-business-opportunity-strategist
 - **xuanlight-aesthetic** 帮你把视觉需求提升成完整风格系统，而不是一条普通 prompt
 - **ai-comic-style** 帮你把抽象 AI/商业概念转成可持续生产的漫画内容宇宙
 - **playful-h5-game-designer** 帮你把中文游戏想法快速做成可试玩、可迭代、可验收的手机 H5
+- **chatgpt-web-orchestrator** 帮控制 Agent 把已登录 ChatGPT Web 变成可监督、可验收、可落盘的第二执行引擎
 
 你可以这样理解当前公开技能线：
 
@@ -126,6 +131,7 @@ kv-business-opportunity-strategist
 - **提取得到笔记** → `kv-biji-note-extractor`
 - **自主循环执行目标** → `kv-goal-loop`
 - **做小而美的移动端 H5 游戏** → `kv-playful-h5-game-designer`
+- **调度 ChatGPT Web 协同执行** → `kp-chatgpt-web-orchestrator`
 
 ---
 
