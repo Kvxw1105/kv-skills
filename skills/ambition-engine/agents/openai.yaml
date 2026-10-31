@@ -1,0 +1,12 @@
+interface:
+  display_name: 野心跃迁器
+  short_description: 开放需求全维跃迁，拒绝伪赛博包装；收敛需求严守边界
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
