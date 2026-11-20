@@ -38,3 +38,7 @@
 - `edge-operator`：将以上发现转化成角色选择、钱流分析、执行合同、跨代理协作与可验收结果。
 
 三者是分工，不是简单叠加三份长提示词；若上下文有限，优先本 Skill 的 `SKILL.md` 与最相关的两份 reference。
+
+### 研究/商机模式 v1.1
+
+读取 `references/research-synthesis-2026-11-20.md` 与 `prompts/EVIDENCE_FIRST_OPERATOR.txt`，对机会卡运行 `python scripts/evidence_gate.py examples/etsy-authenticity-2026/opportunity-evidence.json --json`，别将报价、抱怨、模拟收益当成实付。

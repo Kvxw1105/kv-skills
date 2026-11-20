@@ -1,0 +1,263 @@
+{
+  "version": "1.1.0-research",
+  "generated_on": "2026-11-20",
+  "research_atoms": [
+    {
+      "id": "RX01",
+      "name": "三角线索交叉",
+      "lens": "侦察+制度+交易",
+      "trigger": "单点抱怨或突发政策",
+      "question": "有官方变化、真实困扰和现存付费替代三种独立证据吗？",
+      "observable": "至少两类独立来源和可验证的规则原文",
+      "decision_rule": "只有问题和报价时仍是机会假设，不能叫已成交",
+      "next_action": "把事实、猜测、付款证据分列",
+      "falsifier": "没有明确受影响群体或没有可收费结果",
+      "source_ids": [
+        "SRC13",
+        "SRC16",
+        "SRC18"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX02",
+      "name": "寻找被雇佣的结果",
+      "lens": "产品经理+JTBD",
+      "trigger": "用户只说想要一个功能",
+      "question": "他当时要解决的具体生活任务是什么？",
+      "observable": "实际购买时机、替代方案与放弃行为",
+      "decision_rule": "优先满足待完成的工作而非复述功能需求",
+      "next_action": "写出任务故事，找已有替代方式",
+      "falsifier": "无法指出购买触发场景",
+      "source_ids": [
+        "SRC03"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX03",
+      "name": "先人工兑付再自动化",
+      "lens": "创业者+骇客",
+      "trigger": "想先造大型软件",
+      "question": "能不能先为一个人完成一次结果？",
+      "observable": "人工实际步骤、交付时长、满意度",
+      "decision_rule": "没有服务过程证据前不构建复杂自动化",
+      "next_action": "用沙盒或授权范围做一次完整手工交付",
+      "falsifier": "手工都无法解决问题",
+      "source_ids": [
+        "SRC01",
+        "SRC02"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX04",
+      "name": "公开报价不等于成交",
+      "lens": "商人+审计",
+      "trigger": "看到商家价格或爆款截图",
+      "question": "有人真付款了吗？价格对应什么交付？",
+      "observable": "报价、订金、订单凭据、净到款分别标记",
+      "decision_rule": "没有订单凭据时不确认收入和付费意愿",
+      "next_action": "设计报价与定金验证，不捏造付款",
+      "falsifier": "大量报价却没有可证实的成交",
+      "source_ids": [
+        "SRC18",
+        "SRC07"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX05",
+      "name": "信息不对称逆向价值",
+      "lens": "经济学+信任",
+      "trigger": "买家难以区分真伪质量",
+      "question": "如何提供可检验的质量信号并降低误判？",
+      "observable": "实际成品图、授权记录、制作过程与退货条款",
+      "decision_rule": "将真实证明当价值，不用伪造背书",
+      "next_action": "形成买方可核查的展示清单",
+      "falsifier": "证明成本超过消费者愿付价格",
+      "source_ids": [
+        "SRC04",
+        "SRC14"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX06",
+      "name": "规则变动与执行窗口",
+      "lens": "制度分析+时机",
+      "trigger": "平台最近发布新规则",
+      "question": "何时生效，哪些品类例外，谁需要调整？",
+      "observable": "原始公告日期、适用范围、执行日期",
+      "decision_rule": "先核对边界与真实需求，再设计帮助服务",
+      "next_action": "把新规转成可执行检查表并定期复核",
+      "falsifier": "政策延期、豁免或平台免费解决痛点",
+      "source_ids": [
+        "SRC13",
+        "SRC14",
+        "SRC20"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX07",
+      "name": "对灰色利润提纯",
+      "lens": "灰色市场分析+机制设计",
+      "trigger": "发现非正规交易或灰产利润",
+      "question": "哪些收入来自便利性，哪些来自欺骗或损害？",
+      "observable": "资金流、授权、退款和受损群体",
+      "decision_rule": "优先开发可证实的合法价值替代",
+      "next_action": "写出合法供给路径并扣除全部履约成本",
+      "falsifier": "收益只能靠伪造、侵权、强迫或隐瞒维系",
+      "source_ids": [
+        "SRC06",
+        "SRC07"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX08",
+      "name": "供货商重谈判循环",
+      "lens": "交易员+经营者",
+      "trigger": "已有已验证的交付与供应链",
+      "question": "能通过替代供给或谈判提高每单贡献吗？",
+      "observable": "可比供应价、稳定性、履约失败率",
+      "decision_rule": "不能只看标价，要看最终供给可用性和期望贡献",
+      "next_action": "逐轮搜集真实报价，记录拒绝与替代",
+      "falsifier": "换供给后总成本反而增加",
+      "source_ids": [
+        "SRC08"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX09",
+      "name": "分析动作交替",
+      "lens": "执行型 Agent",
+      "trigger": "规划很多但实际推进很少",
+      "question": "下一个最低成本、最高信息量的行动是什么？",
+      "observable": "本轮工具调用及返回文件/状态码",
+      "decision_rule": "工具结果及时反向更新计划",
+      "next_action": "执行当前低风险动作并记录真实回执",
+      "falsifier": "因权限不足或工具不可用无法获取反馈",
+      "source_ids": [
+        "SRC09"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX10",
+      "name": "失败后形成可复用教训",
+      "lens": "学习型 Agent",
+      "trigger": "试错失败或拒绝",
+      "question": "该失败暴露了什么可检验的机制，而非情绪？",
+      "observable": "原始输入、环境返回、修复动作、复测结果",
+      "decision_rule": "只有复测改善才能升级规则",
+      "next_action": "为同类错误新增一条回归用例",
+      "falsifier": "修复只对这一次提示词奏效",
+      "source_ids": [
+        "SRC10"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX11",
+      "name": "可执行技能复利",
+      "lens": "骇客+系统设计",
+      "trigger": "同类型任务反复出现",
+      "question": "哪些动作能够封装成可运行、可复测的 Skill？",
+      "observable": "脚本、测试和迁移后的执行轨迹",
+      "decision_rule": "提示词教方法，代码固化确定步骤",
+      "next_action": "把确定性检查写成程序并接入回归测试",
+      "falsifier": "更换环境后失败且无诊断信息",
+      "source_ids": [
+        "SRC11",
+        "SRC12"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX12",
+      "name": "拆穿空洞权威",
+      "lens": "社会心理+反欺骗",
+      "trigger": "大师式语言充满抽象承诺",
+      "question": "哪些话可证伪，什么具体证据可以反对它？",
+      "observable": "具体主张、独立证据和可检验定义",
+      "decision_rule": "区分表达感染力与事实准确性",
+      "next_action": "将宏大断言改写为可以审计的承诺",
+      "falsifier": "除了自述和剪辑不存在任何结果证据",
+      "source_ids": [
+        "SRC05",
+        "SRC06"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX13",
+      "name": "说服力与受众自主权",
+      "lens": "传播+产品伦理",
+      "trigger": "打算设计强转换的营销文案",
+      "question": "是否让用户更理解产品，还是更难自主拒绝？",
+      "observable": "报价透明、退订路径、说明可核实",
+      "decision_rule": "不得以伪倒计时、假见证或隐藏费用换销量",
+      "next_action": "产出可核对的价值主张和清晰退出说明",
+      "falsifier": "转化依赖受众误解",
+      "source_ids": [
+        "SRC06",
+        "SRC07"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX14",
+      "name": "市场竞争的逆向信号",
+      "lens": "商业侦察+反证",
+      "trigger": "所有人都在做 AI 标准化商品",
+      "question": "谁因为低质供给而主动寻求反方向的保障？",
+      "observable": "来自买卖双方独立抱怨、平台动作",
+      "decision_rule": "反常规不是自动成功，仍需付费检验",
+      "next_action": "围绕可信度、可追溯交付设计差异化报价",
+      "falsifier": "客户把真实性当卫生因素但不愿额外付钱",
+      "source_ids": [
+        "SRC16",
+        "SRC17",
+        "SRC19",
+        "SRC13"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX15",
+      "name": "长时经营一致性",
+      "lens": "经营管理+Agent",
+      "trigger": "需要运行多轮决策的任务",
+      "question": "能否持续做账、补货、复核，而不是第一天很激进？",
+      "observable": "每轮现金余额、毛贡献、使用工具频率",
+      "decision_rule": "区分模拟基准与真实经营，观察长期状态",
+      "next_action": "建立每轮账本、供应记录和连续性检测",
+      "falsifier": "连续执行后出现状态丢失或负贡献",
+      "source_ids": [
+        "SRC08",
+        "SRC10"
+      ],
+      "confidence": "context-dependent"
+    },
+    {
+      "id": "RX16",
+      "name": "证据等级优先于高野心叙事",
+      "lens": "审计+创业",
+      "trigger": "Agent 说有市场、会赚钱或已经执行",
+      "question": "这句话由什么等级的证据支持？",
+      "observable": "平台政策/个人感受/报价/订单/真实净收入分层",
+      "decision_rule": "付费承诺、单笔交易与利润不能互代",
+      "next_action": "输出带证据状态的机会卡与最小下一步",
+      "falsifier": "只要更换语言包装就能提升声称的证据等级",
+      "source_ids": [
+        "SRC18",
+        "SRC01",
+        "SRC07"
+      ],
+      "confidence": "context-dependent"
+    }
+  ]
+}

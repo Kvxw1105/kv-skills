@@ -4,7 +4,7 @@
 
 [中文快速开始](QUICKSTART.md) · [完整提示词](prompts/MASTER_PROMPT.txt) · [思维原子](references/mind-atoms.md) · [角色组合](references/archetype-mixer.md) · [权限配置](references/permission-charter.md) · [MIT License](LICENSE)
 
-> **当前版本：v1.0.0**。这是提示词、知识库、协议和轻量校验脚本组成的 Skill，不是已获得社交账号控制权或支付权限的自治 SaaS。成功交易、已安装代理、API 调用和实际发布必须分别验收。
+> **当前版本：v1.1.0**。这是提示词、知识库、协议和轻量校验脚本组成的 Skill，不是已获得社交账号控制权或支付权限的自治 SaaS。成功交易、已安装代理、API 调用和实际发布必须分别验收。
 
 ## Why
 
@@ -28,6 +28,17 @@ Most agents can brainstorm. Fewer reliably trace money from a real buyer to a de
 | [`AGENTS.md`](AGENTS.md) | Agent-facing iteration and repository conventions |
 | [`CHANGELOG.md`](CHANGELOG.md) | Release history |
 
+## Evidence-backed upgrade v1.1.0
+
+**21 source records + 16 new research-grade atoms + deterministic truth gate.** Each new atom contains a trigger, observable evidence, decision rule, next action, falsifier and reference IDs. These are additional to the original 96 exploratory atoms. See [research synthesis](references/research-synthesis-2026-11-20.md), [source ledger](references/research-source-ledger.json), [research atoms](references/research-atoms.json) and the [Etsy 2026 policy-shift example](examples/etsy-authenticity-2026/ready-to-use-audit.md).
+
+A verified policy change, a Reddit complaint, and a Fiverr asking price are three different facts; **they do not constitute a paid order**. The packaged `evidence_gate.py` detects several common ways agents misreport payment or execution. It does not validate site authenticity, determine live legal compliance or show improved real-world sales performance.
+
+```bash
+python scripts/evidence_gate.py examples/etsy-authenticity-2026/opportunity-evidence.json --json
+python -m unittest discover -s scripts -p 'test_*.py' -v
+```
+
 ## Use it with any agent
 
 **Skills-aware CLI agents:** Clone the public parent repo at <https://github.com/Kvxw1105/kv-skills> and point your agent/skill manager to `skills/edge-operator/SKILL.md`. If using the `skills` CLI, try:
@@ -46,7 +57,7 @@ CLI availability and auto-discovery vary by host; the repository source is the a
 
 ```bash
 cd skills/edge-operator
-python scripts/test_contracts.py -v
+python -m unittest discover -s scripts -p "test_*.py" -v
 python scripts/validate_mission.py templates/mission.json
 python scripts/unit_economics.py templates/example_deal.json --json
 python scripts/package.py --out ./dist/skill.zip
