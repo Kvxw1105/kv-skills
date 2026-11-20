@@ -1,0 +1,63 @@
+{
+  "case_id": "ETSY-AUTH-2026-01",
+  "title": "Etsy 真实商品展示整理与图片材料核对服务",
+  "observed_on": "2026-11-20",
+  "hypothesis": "部分手工卖家愿为根据2026年10月22日规则核对真实图片/制作证据/商品描述的人工辅助服务付费",
+  "observations": [
+    {
+      "kind": "policy",
+      "statement": "Etsy对多数商品Listing要求至少一张真实未编辑照片，并对部分AI内容设限制",
+      "source_ids": [
+        "SRC13",
+        "SRC14",
+        "SRC15"
+      ],
+      "certainty": "verified_policy"
+    },
+    {
+      "kind": "pain",
+      "statement": "公开社区有卖家和买家对AI商品图的不信任与购买干扰的抱怨",
+      "source_ids": [
+        "SRC16",
+        "SRC17"
+      ],
+      "certainty": "self_reported"
+    },
+    {
+      "kind": "adjacent_offer",
+      "statement": "Fiverr上有Etsy Listing审计等相邻付费服务公开报价",
+      "source_ids": [
+        "SRC18"
+      ],
+      "certainty": "offer_only"
+    },
+    {
+      "kind": "offer_hypothesis",
+      "statement": "拟报价每5个Listing 39美元，尚未对目标卖家测试",
+      "source_ids": [
+        "SRC18"
+      ],
+      "certainty": "hypothesis"
+    }
+  ],
+  "money": {
+    "seller": "个体手工商品卖家",
+    "payer": "待验证",
+    "listed_price_usd": 39,
+    "pricing_status": "hypothesis",
+    "payment_receipt": null,
+    "confirmed_revenue_usd": 0
+  },
+  "work_product": "基于卖家自己提供的真实图片和Listing文本，形成逐项核对报告、照片缺口清单和改善措辞样稿；绝不伪造物品或出具官方认证",
+  "action": {
+    "status": "prepared",
+    "receipt": null,
+    "next_step": "获得授权后向合适的真实卖家展示样品并请求付费确认/订金，记录拒绝和原因"
+  },
+  "stop_condition": "若受访卖家愿意接受免费建议但普遍不愿支付最低可持续价格，停止将其称为可盈利机会",
+  "limitations": [
+    "无法确认该服务的真实订单和净利润",
+    "有品类例外，需逐条核对官方政策",
+    "未经授权不登录商家账号、不发布商品或联系第三方"
+  ]
+}

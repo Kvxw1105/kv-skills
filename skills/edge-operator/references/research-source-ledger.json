@@ -1,0 +1,216 @@
+{
+  "version": "1.1.0-research",
+  "review_date": "2026-11-20",
+  "sources": [
+    {
+      "id": "SRC01",
+      "title": "Paul Graham: Do Things That Do Not Scale",
+      "url": "https://www.paulgraham.com/ds.html",
+      "kind": "practitioner_firsthand",
+      "observed_on": "2026-11-20",
+      "published_on": "2013-07",
+      "claim_supported": "早期公司常手工招募、深入服务客户，学习后再自动化",
+      "caveat": "创业经验，不保证适用于所有生意"
+    },
+    {
+      "id": "SRC02",
+      "title": "Paul Graham: How to Get Startup Ideas",
+      "url": "https://www.paulgraham.com/startupideas.html",
+      "kind": "practitioner_firsthand",
+      "observed_on": "2026-11-20",
+      "published_on": "2012-11",
+      "claim_supported": "主动发现真实问题比头脑风暴热门点子更有帮助；避免虚构需求",
+      "caveat": "作者观点，不是市场需求的直接证据"
+    },
+    {
+      "id": "SRC03",
+      "title": "HBR: Jobs to Be Done, Clayton Christensen interview",
+      "url": "https://hbr.org/podcast/2016/12/the-jobs-to-be-done-theory-of-innovation",
+      "kind": "expert_primary",
+      "observed_on": "2026-11-20",
+      "published_on": "2016-12",
+      "claim_supported": "从消费者为解决的具体任务理解购买行为",
+      "caveat": "经典说明案例，不是每个行业的因果试验"
+    },
+    {
+      "id": "SRC04",
+      "title": "Akerlof: The Market for Lemons",
+      "url": "https://academic.oup.com/qje/article/84/3/488/1896241",
+      "kind": "peer_reviewed_original",
+      "observed_on": "2026-11-20",
+      "published_on": "1970-08",
+      "claim_supported": "买卖双方质量信息不对称可影响市场和交易",
+      "caveat": "理论模型；不能自动证明某产品的需求"
+    },
+    {
+      "id": "SRC05",
+      "title": "Pennycook et al.: pseudo-profound bullshit",
+      "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/on-the-reception-and-detection-of-pseudoprofound-bullshit/0D3C87BCC238BCA38BC55E395BDC9999",
+      "kind": "peer_reviewed_original",
+      "observed_on": "2026-11-20",
+      "published_on": "2015-11",
+      "claim_supported": "空洞而貌似深刻的表达可以被误判为有深度",
+      "caveat": "心理机制研究不是一套万能营销脚本"
+    },
+    {
+      "id": "SRC06",
+      "title": "FTC: Dark patterns staff report summary",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2022/09/ftc-report-shows-rise-sophisticated-dark-patterns-designed-trick-trap-consumers",
+      "kind": "regulator_official",
+      "observed_on": "2026-11-20",
+      "published_on": "2022-09",
+      "claim_supported": "误导广告、隐瞒收费等暗黑模式损害消费者选择",
+      "caveat": "执法机构观点，不应推广为有效或正当的商业方法"
+    },
+    {
+      "id": "SRC07",
+      "title": "FTC: Click Profit settlement announcement",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2025/08/ftc-case-against-e-commerce-business-opportunity-scheme-its-operators-results-permanent-ban-industry",
+      "kind": "regulator_official",
+      "observed_on": "2026-11-20",
+      "published_on": "2025-08",
+      "claim_supported": "AI 被动收入商业机会宣传可产生欺骗性收费及后续法律责任",
+      "caveat": "具体案件/和解，不代表所有商业培训均涉嫌违法"
+    },
+    {
+      "id": "SRC08",
+      "title": "Andon Labs: Vending-Bench 2",
+      "url": "https://andonlabs.com/evals/vending-bench-2",
+      "kind": "benchmark_primary",
+      "observed_on": "2026-11-20",
+      "published_on": "2025-11",
+      "claim_supported": "长周期模拟经营中的持续工具使用、找供货商和谈判影响表现",
+      "caveat": "模拟营业余额不等于真实商业收入；排行榜可更新"
+    },
+    {
+      "id": "SRC09",
+      "title": "Yao et al.: ReAct",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "kind": "research_original",
+      "observed_on": "2026-11-20",
+      "published_on": "2022-10",
+      "claim_supported": "交替进行决策和工具行动可改善一批互动任务表现",
+      "caveat": "实验环境不等同真实世界授权或商业表现"
+    },
+    {
+      "id": "SRC10",
+      "title": "Shinn et al.: Reflexion",
+      "url": "https://arxiv.org/abs/2303.11366",
+      "kind": "research_original",
+      "observed_on": "2026-11-20",
+      "published_on": "2023-03",
+      "claim_supported": "将环境反馈存成反思文本可改善部分任务的后续决策",
+      "caveat": "文本反馈不是模型权重更新，也不保证跨任务稳定提升"
+    },
+    {
+      "id": "SRC11",
+      "title": "Wang et al.: Voyager",
+      "url": "https://arxiv.org/abs/2305.16291",
+      "kind": "research_original",
+      "observed_on": "2026-11-20",
+      "published_on": "2023-05",
+      "claim_supported": "可执行技能库、自动课程和执行反馈构成可重复能力积累",
+      "caveat": "在 Minecraft 环境验证，不等于自动学会现实经商"
+    },
+    {
+      "id": "SRC12",
+      "title": "Agent Skills open format",
+      "url": "https://github.com/agentskills/agentskills",
+      "kind": "spec_primary",
+      "observed_on": "2026-11-20",
+      "published_on": "2026-11",
+      "claim_supported": "SKILL.md 和按需加载的资源可做跨工具可移植行为约定",
+      "caveat": "各宿主安装与工具权限不同，不保证即插即用"
+    },
+    {
+      "id": "SRC13",
+      "title": "Etsy: Important updates to AI use",
+      "url": "https://www.etsy.com/seller-handbook/article/1522733284810",
+      "kind": "platform_official",
+      "observed_on": "2026-11-20",
+      "published_on": "2026-10-22",
+      "claim_supported": "2026-10-22更新规则，部分产品需真实未编辑图，2027年初更主动执行",
+      "caveat": "具体品类有例外，后续政策可能更新"
+    },
+    {
+      "id": "SRC14",
+      "title": "Etsy: Listing image requirements FAQ",
+      "url": "https://help.etsy.com/hc/en-us/articles/44297885802647-How-Do-Etsy-s-Listing-Image-Requirements-Apply-to-My-Listings",
+      "kind": "platform_official",
+      "observed_on": "2026-11-20",
+      "published_on": "2026-10",
+      "claim_supported": "多数商品至少一张未编辑实物图；可裁剪缩放；其他图不能误导",
+      "caveat": "不是法律合规认证，有品类例外"
+    },
+    {
+      "id": "SRC15",
+      "title": "Etsy: Policy on AI creations",
+      "url": "https://www.etsy.com/seller-handbook/article/1275449912004",
+      "kind": "platform_official",
+      "observed_on": "2026-11-20",
+      "published_on": "2026-10-22",
+      "claim_supported": "Bot批量生成无个体人工参与的Listing和AI生成功能教程禁售；AI艺术需披露",
+      "caveat": "平台政策限定 Etsy，不可泛推全行业"
+    },
+    {
+      "id": "SRC16",
+      "title": "r/EtsySellers: Please stop the AI listing images",
+      "url": "https://www.reddit.com/r/EtsySellers/comments/1xmnwb2/please_stop_the_ai_listing_images/",
+      "kind": "community_testimony",
+      "observed_on": "2026-11-20",
+      "published_on": "2026-11-03",
+      "claim_supported": "卖家公开讨论AI展示造成的不信任和买家流失担忧",
+      "caveat": "少数自选反馈，不代表付费意向或整体市场"
+    },
+    {
+      "id": "SRC17",
+      "title": "r/EtsyCommunity: Etsy completely unusable due to AI images",
+      "url": "https://www.reddit.com/r/EtsyCommunity/comments/1xyu00p/etsy_completely_unusable_due_to_ai_images/",
+      "kind": "community_testimony",
+      "observed_on": "2026-11-20",
+      "published_on": "2026-11-17",
+      "claim_supported": "买家声称拟因AI图停止购买个性化礼品",
+      "caveat": "个人发言，不代表总体购买行为"
+    },
+    {
+      "id": "SRC18",
+      "title": "Fiverr: Etsy listing audit marketplace",
+      "url": "https://www.fiverr.com/gigs/etsy-listing-audit",
+      "kind": "marketplace_offer",
+      "observed_on": "2026-11-20",
+      "published_on": "2026-11",
+      "claim_supported": "公开有Listing审查等相邻服务及展示起价",
+      "caveat": "报价不是订单，更不是净收入；列表和价格可能变化"
+    },
+    {
+      "id": "SRC19",
+      "title": "r/Etsy: Has AI taken your business?",
+      "url": "https://www.reddit.com/r/Etsy/comments/1ul1em8/has_ai_taken_your_business/",
+      "kind": "community_testimony",
+      "observed_on": "2026-11-20",
+      "published_on": "2026-07-01",
+      "claim_supported": "卖家反映手工商品差异化、AI图导致消费者预期偏差",
+      "caveat": "主观讨论，缺少收入样本与客观市场统计"
+    },
+    {
+      "id": "SRC20",
+      "title": "Etsy: Listing Image Requirements policy",
+      "url": "https://www.etsy.com/legal/policy/listing-image-requirements/253962679005",
+      "kind": "platform_official",
+      "observed_on": "2026-11-20",
+      "published_on": "2026-10-22",
+      "claim_supported": "真实图、成品照片和不得误导等平台要求",
+      "caveat": "适用范围与执行尺度应查实时官方说明"
+    },
+    {
+      "id": "SRC21",
+      "title": "Paul Graham: Ideas for Startups",
+      "url": "https://www.paulgraham.com/ideas.html",
+      "kind": "practitioner_firsthand",
+      "observed_on": "2026-11-20",
+      "published_on": "2005",
+      "claim_supported": "从实际无法容忍的现实问题出发比随机创意有效",
+      "caveat": "个人观察与创业经验，不构成普遍规律"
+    }
+  ]
+}

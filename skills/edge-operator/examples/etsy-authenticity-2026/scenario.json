@@ -1,0 +1,16 @@
+{
+  "scenario_name": "Etsy real-photo listing review, hypothetical case",
+  "currency": "USD",
+  "data_quality": "ALL INPUTS ILLUSTRATIVE; competitor listings do not establish our price or costs",
+  "price": 39,
+  "refund_rate": 0.1,
+  "refund_handling_cost": 5,
+  "fulfillment_cost": 2,
+  "api_cost": 1,
+  "labor_cost": 15,
+  "customer_acquisition_cost": 8,
+  "payment_fee_percent": 0.03,
+  "payment_fee_fixed": 0.3,
+  "monthly_fixed_cost": 50,
+  "expected_orders_per_month": 10
+}

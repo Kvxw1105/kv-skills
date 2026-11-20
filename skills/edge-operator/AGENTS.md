@@ -1,6 +1,6 @@
 # Instructions for AI coding and research agents
 
-This directory is the portable source of truth for Edge Operator v1.0.
+This directory is the portable source of truth for Edge Operator v1.1.
 
 ## Before edits
 - Read `SKILL.md`, `README.md`, and only the reference material relevant to the requested change.
@@ -22,8 +22,10 @@ This directory is the portable source of truth for Edge Operator v1.0.
 - Keep real-world actions inside currently valid, explicit authorization and available tools.
 
 ## Release checklist
-1. Run `python scripts/test_contracts.py -v`.
+1. Run `python -m unittest discover -s scripts -p "test_*.py" -v` and `python scripts/evidence_gate.py examples/etsy-authenticity-2026/opportunity-evidence.json --json`.
 2. Run `python scripts/validate_mission.py templates/mission.json`.
 3. Verify `python scripts/package.py --out ./dist/skill.zip` creates one skill folder.
 4. Scan changed files for secrets, private data, copied text and unlicensed assets.
 5. Update `CHANGELOG.md`, link to measured behavior where possible.
+
+- For sourced new thinking atoms, link `research-atoms.json` to `research-source-ledger.json`, add realistic counterexamples to `test_research.py`, never infer payments from offer listings.
