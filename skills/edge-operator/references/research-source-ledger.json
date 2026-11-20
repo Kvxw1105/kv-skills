@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0-research",
+  "version": "1.2.0-research",
   "review_date": "2026-11-20",
   "sources": [
     {
@@ -211,6 +211,56 @@
       "published_on": "2005",
       "claim_supported": "从实际无法容忍的现实问题出发比随机创意有效",
       "caveat": "个人观察与创业经验，不构成普遍规律"
+    },
+    {
+      "id": "SRC22",
+      "title": "Mellers et al., Psychological Strategies for Winning a Geopolitical Forecasting Tournament",
+      "url": "https://escholarship.org/uc/item/4rg4n9vr",
+      "kind": "peer_reviewed_original",
+      "observed_on": "2026-11-20",
+      "published_on": "2014",
+      "claim_supported": "Reference-class training, collaborative discussion and performance tracking aided prediction accuracy in the GJP context",
+      "caveat": "Does not prove any particular entrepreneurship decision or our agent behavior improves."
+    },
+    {
+      "id": "SRC23",
+      "title": "Karvetski & Mandel, Coherence of probability judgments from uncertain evidence: Does ACH help?",
+      "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/coherence-of-probability-judgments-from-uncertain-evidence-does-ach-help/9ED40E4658EE77914D2C7A265154B59A",
+      "kind": "peer_reviewed_original",
+      "observed_on": "2026-11-20",
+      "published_on": "2020",
+      "claim_supported": "Controlled experiment with 227 participants found no ACH advantage over no-technique control on tested probability coherence measures",
+      "caveat": "Shows ACH must not be advertised as empirically superior, though checking alternatives may aid traceability."
+    },
+    {
+      "id": "SRC24",
+      "title": "Sampling Uncertainty and Confidence Intervals for Brier and Brier Skill Score",
+      "url": "https://doi.org/10.1175/2007WAF2007049.1",
+      "kind": "peer_reviewed_original",
+      "observed_on": "2026-11-20",
+      "published_on": "2008",
+      "claim_supported": "Brier accuracy and Brier Skill have sampling uncertainty, especially small sets of rare events",
+      "caveat": "No sample size alone certifies commercial causal impact."
+    },
+    {
+      "id": "SRC25",
+      "title": "Cemri et al., Why Do Multi-Agent LLM Systems Fail? MAST",
+      "url": "https://arxiv.org/abs/2503.13657",
+      "kind": "peer_reviewed_original",
+      "observed_on": "2026-11-20",
+      "published_on": "2025",
+      "claim_supported": "MAST taxonomy identifies multiple system design, coordination and verification failure modes across multi-agent LLM traces",
+      "caveat": "Does not prove single-agent processing is always superior; topology selection depends on task and cost."
+    },
+    {
+      "id": "SRC26",
+      "title": "Dhami et al., The analysis of competing hypotheses in intelligence analysis",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/acp.3550",
+      "kind": "peer_reviewed_original",
+      "observed_on": "2026-11-20",
+      "published_on": "2019",
+      "claim_supported": "Randomized study among intelligence analysts found mixed ACH debiasing impact with potential inconsistency/error",
+      "caveat": "Structured alternatives serve traceability; do not claim ACH is a guaranteed bias eliminator."
     }
   ]
 }

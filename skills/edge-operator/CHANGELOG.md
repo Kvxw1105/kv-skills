@@ -2,6 +2,24 @@
 
 All notable changes to Edge Operator are recorded here.
 
+## [1.2.0] - 2026-11-20
+
+### Added
+- Actual judgment calibration protocol with outside-view reference classes, competing explanatory hypotheses, bottleneck positioning and opportunity decay clocks.
+- Binary event forecast DRAFT/FROZEN/SETTLED/VOID, predeclared probability/falsifier/deadline and immutable core-field SHA-256 (not an externally verified timestamp).
+- Brier scoring and paired baseline comparison, with unresolved/VOID counts, no invented base rates or causal claims.
+- Unified sidecar registry for all 112 atoms: 96 heuristics, 16 source-linked research atoms, **zero** field-validated atoms. Patch/split/retire governance and optional descriptive Beta paired-trial review.
+- Like-for-like cross-market price scan and realistic separation of asking spreads, real bids and captured net proceeds.
+- Falsification-latency, gate false-block and human luck-annotation metrics with denominators, plus compact human direction and settlement checkpoints.
+- Deterministic regression tests for new scripts; no Agent A/B or customer experiments claimed.
+
+### Caveats
+- ACH's empirical benefit is mixed; use as a checklist, not a strong empirical guarantee.
+- Paired model trials, field forecast settlements and real sales have NOT occurred in this release.
+- Price scan sample, forecast probability and all trial demonstrations are synthetic, not observed transactions.
+- Existing atom texts preserved; no automatic retirement, repo cron, signed timestamp or account authority is created.
+
+
 ## [1.1.0] - 2026-11-20
 
 ### Added

@@ -29,3 +29,13 @@ This directory is the portable source of truth for Edge Operator v1.1.
 5. Update `CHANGELOG.md`, link to measured behavior where possible.
 
 - For sourced new thinking atoms, link `research-atoms.json` to `research-source-ledger.json`, add realistic counterexamples to `test_research.py`, never infer payments from offer listings.
+
+
+## v1.2 forecast integrity and atom retirement
+
+- Original 96 heuristic atoms must remain `heuristic` until a documented test changes evidence level; source-linked RX atoms are not field validated by citation alone. Registry `references/atom-registry.json` is the portable sidecar. Do not regenerate it destructively after lifecycle edits.
+- On actionable opportunities: complete an outside-view direction card, competing disconfirming hypotheses, value-bottleneck/decay map and a frozen forecast with numeric p/falsifier/settlement date. Unknown base rates remain unknown.
+- Do not edit forecast probabilities, cohort or settlement deadlines after freezing. Revise via a new forecast ID; preserve old SHA and evidence receipts. VOID unattainable tests rather than recording demand failure.
+- Compare atoms only on blinded/controlled eligible tasks, with explicit context and results; one commercial win does not validate all concurrently invoked atoms. Retired atoms stay archived and should not be chosen by default.
+- Make user-facing orientation and settlement packets; never claim the user was informed, a monthly automation installed or a payment received without a trace.
+- Run all `test_*.py` and validate/score the bundled zero-real-data examples before releasing. All examples must be overtly hypothetical.

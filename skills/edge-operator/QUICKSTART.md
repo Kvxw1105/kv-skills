@@ -42,3 +42,8 @@
 ### 研究/商机模式 v1.1
 
 读取 `references/research-synthesis-2026-11-20.md` 与 `prompts/EVIDENCE_FIRST_OPERATOR.txt`，对机会卡运行 `python scripts/evidence_gate.py examples/etsy-authenticity-2026/opportunity-evidence.json --json`，别将报价、抱怨、模拟收益当成实付。
+
+
+### v1.2: calibration quick route
+
+For a material commercial decision, copy `templates/orientation_card.md` and `templates/forecast_example.json`, replace all example data and freeze the forecast **before** outcomes: `python scripts/calibration.py freeze path.json ID`. At closure, settle with independent receipt and review the Brier score; monthly checks are manual unless explicitly scheduled. Use `references/atom-registry.json` to check evidence tiers before invoking original heuristic versus RX source-linked atoms. Price gaps alone are not achieved arbitrage. See `references/calibration-loop.md`.

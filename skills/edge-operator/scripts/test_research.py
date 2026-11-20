@@ -5,6 +5,7 @@ import json
 import unittest
 from pathlib import Path
 from evidence_gate import evaluate_case, check_atoms
+from calibration import freeze
 
 ROOT=Path(__file__).resolve().parent.parent
 LEDGER=json.loads((ROOT/'references/research-source-ledger.json').read_text(encoding='utf-8'))
@@ -58,6 +59,19 @@ class ResearchGateTests(unittest.TestCase):
         t['stop_condition']=''
         errors,_=evaluate_case(t,LEDGER)
         self.assertIn('must state falsifiable stop condition',errors)
+    def test_actionable_requires_valid_frozen_forecast(self):
+        t=copy.deepcopy(CASE)
+        t['decision_mode']='actionable'
+        t['forecast_id']='DEMO-ETSY-01'
+        errors,_=evaluate_case(t,LEDGER)
+        self.assertTrue(any('requires one frozen forecast' in x for x in errors))
+        draft=json.loads((ROOT/'templates/forecast_example.json').read_text(encoding='utf-8'))
+        errors,_=evaluate_case(t,LEDGER,draft)
+        self.assertTrue(any('must be frozen' in x for x in errors))
+        draft['forecasts'][0]['opportunity_id']=t['case_id']
+        draft['forecasts'][0]=freeze(draft['forecasts'][0])
+        errors,_=evaluate_case(t,LEDGER,draft)
+        self.assertEqual(errors,[])
     def test_hypothesis_not_proof_of_revenue(self):
         t=copy.deepcopy(CASE)
         t['observations']=[{'kind':'offer_hypothesis','statement':'I can sell','source_ids':[]}]

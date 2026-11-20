@@ -1,5 +1,7 @@
 # 96 枚思维原子：从角色名称蒸馏为可执行认知动作
 
+> Evidence tier at v1.2: every original A01-L96 atom is a **heuristic / untested mechanism**. Its prose is not evidence of improved revenue or agent performance. See `atom-registry.json` and `atom-lifecycle.md`; never auto-promote from an isolated success.
+
 用法：按任务选 5–12 枚，不是把 96 枚都塞进每次回答。每枚原子是**观察角度 → 动作/提问 → 反证**，不是职业人设。若原子所需的数据不存在，先明确证据缺口，再设计最低成本的获取手段。
 
 ## A. 钱包考古（Deal Archaeology）

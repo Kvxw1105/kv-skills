@@ -16,3 +16,19 @@
 - 当前状态：[IDEA | EVIDENCE | DEMO | QUOTED | PAID | REPEAT]
 
 **注**：曝光、咨询、报价、订金、实付、净回款、复购不能混同。无公开价格或交易凭证，不得称“已证实有人为该服务付费”。
+
+## v1.2 Required decision overlay (only when selecting/acting on an opportunity)
+
+- **Forecast event definition / cohort / threshold**: [exact binary observation; not just "market works"]
+- **Numeric probability p**: [0..1 estimate or remain DRAFT if cannot honestly define event]
+- **Falsification metric**: [observable, including what counts as evidence AGAINST]
+- **Settlement date**: [YYYY-MM-DD, receipt and reviewer]
+- **Outside-view reference class**: [numerator / denominator / date / URL / selection bias, or UNKNOWN]
+- **Competing explanations**: [>=2, strongest disconfirming test for each]
+- **Position and bypass**: [bottleneck owner, who can charge, can client bypass us?]
+- **Decay trigger and recheck date**: [why gap persists and what erases it]
+- **Relevant atom IDs and evidence tiers**: [check references/atom-registry.json]
+- **Human touchpoint**: [one short direction packet and one settlement packet, not unnecessary approvals]
+- **Frozen forecast file/id/hash**: [link to append-only or Git-committed snapshot; never invent]
+
+See `templates/orientation_card.md` and `templates/forecast_example.json`. Source caveats, net cash and external execution receipts still apply. Brier without a comparable settled sample is descriptive only.

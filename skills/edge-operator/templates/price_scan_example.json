@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.2",
+  "note": "DEMO figures and quotes only. NO marketplace pages actually visited, stock verified, bids received or profits earned.",
+  "comparison_key": "DEMO-SAME-SKU-NEW",
+  "base_currency": "USD",
+  "quotes": [
+    {
+      "market": "SAMPLE-PLATFORM-A",
+      "kind": "ask",
+      "listing_ref": "DEMO:listing-A",
+      "observed_at": "2026-11-20T08:00:00+00:00",
+      "comparison_key": "DEMO-SAME-SKU-NEW",
+      "condition": "new",
+      "unit": "item",
+      "region": "US",
+      "price": 50,
+      "shipping": 4,
+      "tax": 3,
+      "platform_fee": 0,
+      "payment_fee": 0,
+      "refund_allowance": 2,
+      "fx_to_base": 1,
+      "quantity": 1,
+      "inventory_verified": false,
+      "authorized_transfer": false,
+      "quote_currency": "USD",
+      "fx_rate_source": "DEMO:assume-USD-USD=1"
+    },
+    {
+      "market": "SAMPLE-PLATFORM-B",
+      "kind": "ask",
+      "listing_ref": "DEMO:listing-B",
+      "observed_at": "2026-11-20T09:00:00+00:00",
+      "comparison_key": "DEMO-SAME-SKU-NEW",
+      "condition": "new",
+      "unit": "item",
+      "region": "US",
+      "price": 79,
+      "shipping": 4,
+      "tax": 4,
+      "platform_fee": 5,
+      "payment_fee": 2,
+      "refund_allowance": 3,
+      "fx_to_base": 1,
+      "quantity": 1,
+      "inventory_verified": false,
+      "authorized_transfer": false,
+      "quote_currency": "USD",
+      "fx_rate_source": "DEMO:assume-USD-USD=1"
+    }
+  ]
+}

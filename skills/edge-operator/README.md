@@ -4,7 +4,7 @@
 
 [中文快速开始](QUICKSTART.md) · [完整提示词](prompts/MASTER_PROMPT.txt) · [思维原子](references/mind-atoms.md) · [角色组合](references/archetype-mixer.md) · [权限配置](references/permission-charter.md) · [MIT License](LICENSE)
 
-> **当前版本：v1.1.0**。这是提示词、知识库、协议和轻量校验脚本组成的 Skill，不是已获得社交账号控制权或支付权限的自治 SaaS。成功交易、已安装代理、API 调用和实际发布必须分别验收。
+> **当前版本：v1.2.0**。这是提示词、知识库、协议和轻量校验脚本组成的 Skill，不是已获得社交账号控制权或支付权限的自治 SaaS。成功交易、已安装代理、API 调用和实际发布必须分别验收。
 
 ## Why
 
@@ -28,7 +28,7 @@ Most agents can brainstorm. Fewer reliably trace money from a real buyer to a de
 | [`AGENTS.md`](AGENTS.md) | Agent-facing iteration and repository conventions |
 | [`CHANGELOG.md`](CHANGELOG.md) | Release history |
 
-## Evidence-backed upgrade v1.1.0
+## Evidence-backed upgrade v1.2.0
 
 **21 source records + 16 new research-grade atoms + deterministic truth gate.** Each new atom contains a trigger, observable evidence, decision rule, next action, falsifier and reference IDs. These are additional to the original 96 exploratory atoms. See [research synthesis](references/research-synthesis-2026-11-20.md), [source ledger](references/research-source-ledger.json), [research atoms](references/research-atoms.json) and the [Etsy 2026 policy-shift example](examples/etsy-authenticity-2026/ready-to-use-audit.md).
 
@@ -80,3 +80,32 @@ Python 3 standard library only. The example deal numbers are **illustrative assu
 The goal is aggressive exploration and evidence-based action within actual authority. This project may analyze persuasion, underground economies and adversarial behavior; it does not advocate fraud, unauthorized access, abuse, fabricated proof, harassment or evasion of legitimate enforcement. Human operators remain accountable for permissions, publication, spending and applicable rules.
 
 Licensed under [MIT](LICENSE). Attribution: Kvxw1105, 2026.
+
+
+## Judgment calibration and finite atom lifecycle (v1.2.0)
+
+The most important change: a commercial agent should **settle its forecasts and retire weak ideas**, rather than only collecting new evidence and increasing the atom count.
+
+- [Calibration loop](references/calibration-loop.md): outside-view reference class, rival hypotheses, probability/falsifier/settlement, freeze SHA, monthly settlement and Brier accuracy review.
+- [Direction card](templates/orientation_card.md) and [draft forecast](templates/forecast_example.json): one concise intervention at orientation, another at settlement; no unnecessary approval cascade.
+- [Atom lifecycle](references/atom-lifecycle.md) and [uniform registry](references/atom-registry.json): all original 96 are `heuristic`, all 16 RX atoms `research_linked`, none independently field-validated; controlled trials can motivate patch/split/retire review, not auto-impute commercial revenue.
+- [Cross-market discovery](references/cross-market-price-discovery.md) with [synthetic price scan](templates/price_scan_example.json): listed quotes and executable bid/ask economics are different evidence types.
+- [Process metrics](scripts/ops_metrics.py): falsification latency, independently adjudicated gate false-block rate and *annotated* luck context, with missing-data denominators.
+
+Run from the Skill directory:
+
+```bash
+python scripts/calibration.py validate templates/forecast_example.json
+python scripts/calibration.py report templates/forecast_example.json
+python scripts/atom_review.py
+python scripts/price_scan.py templates/price_scan_example.json
+python scripts/ops_metrics.py templates/ops_metrics_example.json
+python -m unittest discover -s scripts -p 'test_*.py' -v
+python scripts/package.py --out ./dist/skill.zip
+```
+
+**Limitations:** Scores currently have zero real settlements, sample prices are synthetic, no Agent-vs-Agent controlled A/B was run, and there is no automatic monthly scheduler or signed forecast registry. Local SHA detects changes in an existing frozen record but cannot independently prove its creation time. Git history can supply a more credible external timestamp when the file is committed before the event resolves.
+
+Calibration sharing between agents: [portable JSON contract](references/interoperability.md). Do not claim drop-in compatibility with another team's schema until an explicit mapping has been tested.
+
+Full rationale and critique-by-critique responses: [external review response](references/review-response-2026-11-20.md).

@@ -2,11 +2,15 @@
 
 本文件避免通用“做内容、建矩阵、七天验证”套路。每个任务必须指定**商品/结果、付钱的人、交易场景、价格依据、渠道、履约、净现金、验证动作**。没证据写“尚无”，不得编造。
 
+## v1.2 Decision front gate: orient before persuasive research
+
+For actionable commercial recommendations, fill [orientation card](../templates/orientation_card.md) first: a comparable outside-view cohort (or **UNKNOWN**), at least two rival explanations and tests that might disconfirm each, value-position/bottleneck ownership, likely bypass route, and an erosion/recheck trigger. Do not let an unsupported base-rate guess masquerade as a measured cohort. When the research remains exploratory, mark probability/forecast as DRAFT and continue low-risk research instead of inventing numbers to satisfy a form.
+
 ## 1. Deal Scout：从哪里真的有人花钱？
 
 **输入**：平台/人群/技术/抱怨/圈层/公开案例之一。
 
-**步骤**：
+**步骤** (once orientation is documented where material):
 1. 去交易发生处：报价页、订单页面、评论区买卖、二手市场、闲鱼/小红书/淘宝/Reddit/社群服务帖/行业论坛等实际可访问来源；不假称访问了受限平台。
 2. 确认参与者：谁付钱、谁使用、谁交付、谁抽佣、谁仲裁争议。
 3. 找到触发情境：为何现在必须买？不买会损失什么？
@@ -78,3 +82,11 @@
 - **为什么轮到我们**：现成能力、关系/许可、技术、可信证据。
 - **下一件真动作**：谁执行、输入、可观察结果和停止条件。
 - **权限**：哪些可立即做，哪些需要账号、外联、费用授权。
+
+## 8. Cross-Market Price Discovery: quoted spreads versus captured value
+
+Run only when prices can be compared in a legitimate, similar good/result and region. Record SKU/condition/unit/quantity, time, quote type, FX, fulfillment, taxes, platform/payment/refund costs and real counterparties. Compare a buyer's verified bid against a buyer's actual acquisition cost; two selling asks do not yield a trade. Report which bottleneck holds account, stock, settlement and client trust, whether our intermediary role is bypassable and what event would erase the gap. See [cross-market-price-discovery.md](cross-market-price-discovery.md) and `scripts/price_scan.py`. Quotes are not orders; no real profits without receipts.
+
+## Settlement after selection
+
+For high-value or repeated choices, freeze event probability, falsifier and settlement date via [calibration-loop.md](calibration-loop.md). Hold a short monthly review: scored forecast Brier, missed due dates, real payments, refunds, disconfirming evidence, atom trial outcomes and user-facing correction packets. Track unknowns, VOID cases and opportunity cost. **No monthly automation is installed by this paragraph.**
