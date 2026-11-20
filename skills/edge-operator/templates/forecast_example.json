@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.2",
+  "notes": "DEMONSTRATION ONLY. No real forecast was committed; no seller contacted; probability is illustrative and uncalibrated.",
+  "forecasts": [
+    {
+      "forecast_id": "DEMO-ETSY-01",
+      "opportunity_id": "ETSY-AUTH-2026-01",
+      "question": "If 10 consenting eligible sellers are actually contacted by the expiry date, will at least one make a documented >=$20 deposit for a 5-listing authenticity audit by 2027-01-31?",
+      "outcome_definition": "Binary: 1 only if 10 eligible contacted sellers and >=1 verifiable $20+ deposit by deadline. If outreach/eligibility threshold fails, mark VOID with receipt, never score as a demand failure.",
+      "population": "Hypothetical 10 consenting independent Etsy handmade sellers targeted with permission; not selected or contacted",
+      "settle_by": "2027-01-31",
+      "probability": 0.15,
+      "falsifier": "Among 10 eligible contacted sellers, zero documented >=$20 deposits by settlement date counts as outcome 0. Outreach not completed is VOID, not 0.",
+      "reference_class": {
+        "description": "No trustworthy prior sample of identical offer, targeting, and contact channel; outside-view baseline unknown",
+        "sample_n": null,
+        "success_n": null,
+        "base_rate": null,
+        "source_ref": null,
+        "as_of": null,
+        "selection_bias": "Self-selected marketplaces and outreach could overstate willingness to pay"
+      },
+      "hypotheses": [
+        {"id":"H1","explanation":"Sellers value an audit and can afford a paid deposit","disconfirming_test":"Eligible sellers view demo and decline price even after clear deliverable"},
+        {"id":"H2","explanation":"Sellers have a real need but prefer free platform resources","disconfirming_test":"A seller requests paid manual handling rather than readily available free guidance"},
+        {"id":"H3","explanation":"Rule changes do not materially affect this particular seller category","disconfirming_test":"Review exact current policy and affected product categories for sampled sellers"}
+      ],
+      "position": {
+        "bottleneck_owner":"Etsy listing rules and merchant access remain under platform/seller control",
+        "our_position":"Outside service provider; can only audit seller-authorized data",
+        "can_be_bypassed":"Yes: sellers may use free guides, in-house staff, or competing auditors",
+        "value_capture":"Fee for time saved and well-documented review, if willingness to pay is shown"
+      },
+      "decay": {
+        "why_gap_remains":"Policy transition and seller-specific auditing effort (hypothesis only)",
+        "erosion_trigger":"Platform documentation improves, seller tools automate audit, or buyer trust returns",
+        "recheck_on":"2026-12-01"
+      },
+      "atom_ids":["A08","C17","K81","RX01"],
+      "evidence_plan":"Record policy revision and category exceptions; with contact permission collect exact outreach, replies, deposits/refunds and completed audits",
+      "state":"DRAFT",
+      "frozen_at":null,
+      "forecast_sha256":null,
+      "outcome":null,
+      "user_checkpoint": {"orientation_summary_status":"prepared_not_sent","settlement_summary_status":"not_due"}
+    }
+  ]
+}

@@ -47,7 +47,7 @@ def check_atoms(atoms_data, ledger):
     return errors
 
 
-def evaluate_case(case, ledger):
+def evaluate_case(case, ledger, forecast_book=None):
     """Returns (errors, summary), never infers payment from offers/complaints."""
     errors = []
     srcs = sources_by_id(ledger)
@@ -94,6 +94,20 @@ def evaluate_case(case, ledger):
     if not case.get('hypothesis'):
         errors.append('must state business hypothesis')
 
+    decision_mode=case.get('decision_mode','exploratory')
+    if decision_mode not in ('exploratory','actionable'):
+        errors.append('unknown decision_mode')
+    if decision_mode=='actionable':
+        from calibration import validate_forecast
+        fid=case.get('forecast_id')
+        candidates=[f for f in forecast_book.get('forecasts',[]) if f.get('forecast_id')==fid] if isinstance(forecast_book,dict) else []
+        if not fid or len(candidates)!=1:
+            errors.append('actionable decision requires one frozen forecast record')
+        else:
+            f=candidates[0]
+            if f.get('state') not in ('FROZEN','SETTLED') or validate_forecast(f) or f.get('opportunity_id')!=case.get('case_id'):
+                errors.append('actionable forecast must be frozen, valid and linked to case ID')
+
     stage = ('PAID_EVIDENCE_PRESENT' if 'confirmed_payment' in kinds and money.get('payment_receipt') else
              'POLICY_PAIN_OFFER_NO_PAYMENT' if {'policy','pain','adjacent_offer'} <= kinds else
              'EARLY_EVIDENCE_ONLY')
@@ -111,7 +125,15 @@ def main(argv=None):
     ledger = json.loads(SOURCE_PATH.read_text(encoding='utf-8'))
     atoms = json.loads(ATOMS_PATH.read_text(encoding='utf-8'))
     case = json.loads(args.case_file.read_text(encoding='utf-8'))
-    errors,summary = evaluate_case(case,ledger)
+    book=None
+    if case.get('decision_mode')=='actionable':
+        ref=case.get('forecast_book')
+        if isinstance(ref,str) and ref and not Path(ref).is_absolute():
+            fp=(ROOT/ref).resolve()
+            if fp.is_relative_to(ROOT) and fp.is_file() and fp.suffix=='.json':
+                try:book=json.loads(fp.read_text(encoding='utf-8'))
+                except (ValueError,OSError):pass
+    errors,summary = evaluate_case(case,ledger,book)
     errors.extend(check_atoms(atoms, ledger))
     result={'pass':not errors,'errors':errors,'summary':summary,
             'source_count':len(ledger['sources']),'research_atom_count':len(atoms['research_atoms'])}

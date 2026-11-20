@@ -1,0 +1,1287 @@
+{
+  "schema_version": "1.2",
+  "count_note": "96 historical heuristic atoms + 16 source-linked research atoms. Zero field-validated atoms at initial release.",
+  "atoms": [
+    {
+      "id": "A01",
+      "name": "收款逆流",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "A02",
+      "name": "替代品剖腹",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "A03",
+      "name": "急迫时刻",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "A04",
+      "name": "讨厌但付费",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "A05",
+      "name": "非消费型支付者",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "A06",
+      "name": "需求密度",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "A07",
+      "name": "负面评论地形",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "A08",
+      "name": "付费证据阶梯",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "B09",
+      "name": "价格之外的价格",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "B10",
+      "name": "单位贡献",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "B11",
+      "name": "风险定价",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "B12",
+      "name": "套餐反向",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "B13",
+      "name": "快钱/慢钱分层",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "B14",
+      "name": "退出成本检视",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "B15",
+      "name": "价值证据对价",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "B16",
+      "name": "现金漏斗",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "C17",
+      "name": "谁握入口",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "C18",
+      "name": "谁能替换谁",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "C19",
+      "name": "跨圈语言",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "C20",
+      "name": "中间商真职能",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "C21",
+      "name": "平台税负",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "C22",
+      "name": "信任瓶颈",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "C23",
+      "name": "分销链测绘",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "C24",
+      "name": "可逆渠道下注",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "D25",
+      "name": "任务而非功能",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "D26",
+      "name": "笨办法信号",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "D27",
+      "name": "临界体验",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "D28",
+      "name": "错位假设",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "D29",
+      "name": "意外价值",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "D30",
+      "name": "全链摩擦",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "D31",
+      "name": "取消即学习",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "D32",
+      "name": "无产品挑战",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "E33",
+      "name": "表层/深层欲望",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "E34",
+      "name": "身份损益",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "E35",
+      "name": "不确定性成本",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "E36",
+      "name": "真实行动偏好",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "E37",
+      "name": "社会证明审计",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "E38",
+      "name": "决策负担",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "E39",
+      "name": "关系复利",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "E40",
+      "name": "反羞耻产品",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "F41",
+      "name": "命名冲突",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "F42",
+      "name": "反直觉反证",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "F43",
+      "name": "具体镜头",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "F44",
+      "name": "认知阶梯",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "F45",
+      "name": "戏剧性但诚实",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "F46",
+      "name": "可信的反面",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "F47",
+      "name": "观点产权",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "F48",
+      "name": "行动闭环",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "G49",
+      "name": "谁能否决",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "G50",
+      "name": "BATNA 思维",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "G51",
+      "name": "对方的胜利条件",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "G52",
+      "name": "真实承诺交换",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "G53",
+      "name": "激励错配",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "G54",
+      "name": "重复博弈",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "G55",
+      "name": "网络桥梁",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "G56",
+      "name": "退出机制",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "H57",
+      "name": "假设粉碎",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "H58",
+      "name": "接口重组",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "H59",
+      "name": "极小可测证明",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "H60",
+      "name": "瓶颈强攻",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "H61",
+      "name": "可观察性优先",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "H62",
+      "name": "失效方式先知",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "H63",
+      "name": "最小特权",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "H64",
+      "name": "工具链替代",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "I65",
+      "name": "黑箱利润归因",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "I66",
+      "name": "风险是谁的",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "I67",
+      "name": "非正规替代品",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "I68",
+      "name": "规则缝隙雷达",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "I69",
+      "name": "规模错觉",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "I70",
+      "name": "白化重构",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "I71",
+      "name": "强迫/欺骗信号",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "I72",
+      "name": "声誉负债",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "J73",
+      "name": "可识别观点",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "J74",
+      "name": "证据型内容",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "J75",
+      "name": "题材张力",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "J76",
+      "name": "叙事与产品同源",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "J77",
+      "name": "明确转化",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "J78",
+      "name": "真正的个人特色",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "J79",
+      "name": "追踪漏斗质量",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "J80",
+      "name": "内容复用不造假",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "K81",
+      "name": "先验底盘",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "K82",
+      "name": "最强反例",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "K83",
+      "name": "可逆性排序",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "K84",
+      "name": "机会成本",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "K85",
+      "name": "生存过滤",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "K86",
+      "name": "阈值行动",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "K87",
+      "name": "证据追溯",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "K88",
+      "name": "错误反哺",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "L89",
+      "name": "能力地图",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "L90",
+      "name": "授权账本",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "L91",
+      "name": "原子任务交接",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "L92",
+      "name": "并行互补",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "L93",
+      "name": "成交闭环所有权",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "L94",
+      "name": "证据回执",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "L95",
+      "name": "自愈分支",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "L96",
+      "name": "可复用但不过度沉淀",
+      "origin": "original_heuristic",
+      "evidence_tier": "heuristic",
+      "lifecycle": "candidate",
+      "source_ids": [],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Useful hypothesis; not independently validated as a commercial-performance enhancer."
+    },
+    {
+      "id": "RX01",
+      "name": "三角线索交叉",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC13",
+        "SRC16",
+        "SRC18"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX02",
+      "name": "寻找被雇佣的结果",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC03"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX03",
+      "name": "先人工兑付再自动化",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC01",
+        "SRC02"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX04",
+      "name": "公开报价不等于成交",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC18",
+        "SRC07"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX05",
+      "name": "信息不对称逆向价值",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC04",
+        "SRC14"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX06",
+      "name": "规则变动与执行窗口",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC13",
+        "SRC14",
+        "SRC20"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX07",
+      "name": "对灰色利润提纯",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC06",
+        "SRC07"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX08",
+      "name": "供货商重谈判循环",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC08"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX09",
+      "name": "分析动作交替",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC09"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX10",
+      "name": "失败后形成可复用教训",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC10"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX11",
+      "name": "可执行技能复利",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC11",
+        "SRC12"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX12",
+      "name": "拆穿空洞权威",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC05",
+        "SRC06"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX13",
+      "name": "说服力与受众自主权",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC06",
+        "SRC07"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX14",
+      "name": "市场竞争的逆向信号",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC16",
+        "SRC17",
+        "SRC19",
+        "SRC13"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX15",
+      "name": "长时经营一致性",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC08",
+        "SRC10"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    },
+    {
+      "id": "RX16",
+      "name": "证据等级优先于高野心叙事",
+      "origin": "research_2026_11_20",
+      "evidence_tier": "research_linked",
+      "lifecycle": "candidate",
+      "source_ids": [
+        "SRC18",
+        "SRC01",
+        "SRC07"
+      ],
+      "observed_trial_n": 0,
+      "last_reviewed": null,
+      "note": "Sources support a mechanism/context; no controlled evidence of incremental sales or model improvement."
+    }
+  ]
+}

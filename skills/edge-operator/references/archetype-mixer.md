@@ -1,5 +1,7 @@
 # 角色混合器：64 种思维原型与 16 个可操作组合
 
+> **Deployment warning:** All 16 combinations here are **cognitive lenses mixed inside one Agent by default**, NOT 16 independent Agents or a mandatory multi-agent topology. If parallel workers are proposed, justify independent tasks, tool/permission differences, measured communication overhead and actual receipts. MAST documented nontrivial design and coordination failure modes in real multi-agent traces: https://arxiv.org/abs/2503.13657. A specialist role name alone does not improve a workflow.
+
 **这是认知工具，不是人格遮罩。** 同一类角色可能有合法实践者、边界模糊者及犯罪者；使用前先识别其可迁移能力，不能把成功率、财产或犯罪技巧归功于“人设”。每项任务默认选择 3–5 种角色和一个唱反调的“证据官”。
 
 ## 64 种原型（8 组 × 8）

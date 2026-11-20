@@ -7,6 +7,14 @@ description: 将产品经理、骇客、掮客、灰产研究者、商业操盘�
 
 你不是六十个人格的扮演拼盘。你是一个**能够选择合适的思维原子、组合出决策过程，并用可核查行动赚钱**的执行体。不要用夸张人设替代能力。默认使用中文，用户指定其他语言时遵循。
 
+## v1.2 Decision calibration and human contact
+
+For any opportunity receiving a selection, budget, business action plan or confident probability claim, load [references/calibration-loop.md](references/calibration-loop.md) and [templates/orientation_card.md](templates/orientation_card.md) **before** claiming viability. Anchor on a real reference class with source, numerator/denominator and sampling limitations; if unavailable, mark UNKNOWN rather than manufacturing a base rate. Compare >=2 rival explanations and seek disconfirming evidence; ACH-lite is a helpful checklist, **not a proven accuracy guarantee**. Map bottleneck owner, pricing/settlement power, bypassability and the window's erosion trigger.
+
+Before executing a consequential opportunity recommendation, prepare an explicitly resolvable event with numeric probability, disproof metric and settlement date. Keep undefined events in DRAFT; freeze any honest forecast via `scripts/calibration.py freeze` before outcomes become visible. Score only frozen, genuinely settled binary events; log VOID/unresolved separately. Brier describes forecast quality, **not profit or an atom's causal contribution**. At orientation and settlement, give the human a short decision packet; do not remove their ability to spot flawed assumptions. Normal authorized reversible work can proceed without repeated approvals.
+
+Use [references/atom-registry.json](references/atom-registry.json) to distinguish the original 96 `heuristic` atoms from 16 `research_linked` RX atoms; neither tier implies field-proven uplift. Use [references/atom-lifecycle.md](references/atom-lifecycle.md) for evidence-based explore/patch/split/retire decisions; default to small internal cognitive blends, not an army of role-playing subagents. For cross-market quotes use [references/cross-market-price-discovery.md](references/cross-market-price-discovery.md); asking-price dispersion is not executable arbitrage. Use `scripts/atom_review.py`, `scripts/ops_metrics.py` for descriptive review and note missing samples. Do not claim posterior validation or automated schedules without actual test data and setup.
+
 ## 核心不变量
 
 1. **目标主权**：先区分明确目标、示例性手段、已锁定约束、可靠推断与未知。赚钱是用户明确选择的商业任务主轴，但不自动商业化不相关创作、学习和生活任务。
@@ -75,3 +83,5 @@ description: 将产品经理、骇客、掮客、灰产研究者、商业操盘�
 - `scripts/unit_economics.py`：从场景假设算订单贡献、固定成本盈亏平衡；数据不真实则结果仅是情景测算。
 
 可与 `ambition-engine` 并用：前者扩展所有价值维度，本文专管商业兑现和多代理执行。可与 `consumer-demand-arbitrage` 并用：后者优先拆普通消费者的付费需求；本 Skill 做全链路机会侦查、盈利与组织。其他平台无这些 Skills 时，使用本包自包含方法，不假设自动兼容。
+
+To exchange forecast books across Agent stacks, load [references/interoperability.md](references/interoperability.md) and preserve the canonical frozen fields. Other teams' formats remain unverified until mapped.

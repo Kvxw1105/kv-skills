@@ -1,0 +1,5 @@
+{
+  "schema_version": "1.2",
+  "notes": "No trial has happened. A randomized_paired entry must cite both frozen tasks/receipts, independent evaluation and heldout status; repeated use of one task is not independent evidence.",
+  "trials": []
+}
