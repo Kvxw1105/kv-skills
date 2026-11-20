@@ -10,6 +10,7 @@
 | 技能 | 定位 | 核心能力 |
 |------|------|---------|
 | [**ambition-engine**](skills/ambition-engine/) | 野心跃迁器 | 开放需求主动突破，明确边界内交付 |
+| [**edge-operator**](skills/edge-operator/) | 商业行动引擎 | 96 思维原子、64 角色原型、16 组合；发现交易、执行验证与多 Agent 配合 |
 | [**KV Creative Workbench Suite**](skill-suites/kv-creative-workbench/) | 创意决策组合技 | 从问题重构、创意发散、独立收敛到机会验证与决策，支持回流和选择性重跑 |
 | [**kv-insight-engine**](skills/kv-insight-engine/) | 洞察引擎 — 深度思考放大器 | 提纯问题、拉高判断、交付更强方案 |
 | [**kv-clarity-mirror**](skills/kv-clarity-mirror/) | 清晰镜 — AI 盲区检查器 | 运行时自检，在交付前捕获最可能翻车的地方 |
@@ -60,6 +61,7 @@ npx skillkit add Kvxw1105/kv-playful-h5-game-designer
 或用 `skills` CLI：
 
 ```bash
+npx skills add Kvxw1105/kv-skills --skill edge-operator
 npx skills add Kvxw1105/kv-sanity-auditor
 npx skills add Kvxw1105/kv-ai-comic-style
 npx skills add Kvxw1105/kv-xuanlight-aesthetic
@@ -154,3 +156,5 @@ kv-business-opportunity-strategist
 - **具体而非抽象**：每个技能给出可直接执行的检查点，而非泛泛建议
 - **开源生态意识**：发现问题时指出社区已有方案，不重复造轮子
 - **组合而不耦死**：组合技共享协议与状态，同时保持每个子 Skill 可单独安装、测试和升级
+
+- **商业洞察 → 找钱与执行** → [`edge-operator`](skills/edge-operator/)，将思维原子转成机会证据、可测产品和跨 Agent 任务合同

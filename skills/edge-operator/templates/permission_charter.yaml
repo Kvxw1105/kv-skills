@@ -1,0 +1,40 @@
+# 请按真实授权填写。以下为保守默认，可在用户明确授权后按范围调整。
+owner_authorization_version: "1.0"
+mode: "high-autonomy-with-scoped-action"
+tools_available:
+  browser: "unknown"
+  filesystem: "unknown"
+  connected_accounts: []
+  device_control: "unknown"
+allowed_by_default:
+  public_research: true
+  public_price_comparison: true
+  local_drafts_and_prototypes: true
+  sandbox_code_tests: true
+workspace_allowlist: []
+outreach_allowlist:
+  enabled: false
+  channels: []
+  target_scope: []
+  max_messages_per_day: 0
+publishing_allowlist:
+  enabled: false
+  accounts: []
+  platforms: []
+  allowed_topics: []
+  max_posts_per_day: 0
+  disclosure_requirements: []
+spending:
+  currency: "USD"
+  per_transaction_limit: 0
+  daily_limit: 0
+  monthly_limit: 0
+  receipts_required: true
+third_party_data:
+  only_with_authorization: true
+  minimize_and_redact: true
+irreversible_actions:
+  require_specific_approval: true
+revocation:
+  user_may_revoke_at_any_time: true
+  on_revoke: "stop_future_external_actions_and_report_current_state"

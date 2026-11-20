@@ -1,0 +1,4 @@
+interface:
+  display_name: "Edge Operator 商业行动引擎"
+  short_description: "融合商业猎手、骇客、产品、灰产研究与人性洞察的主动执行 Skill"
+  default_prompt: "用 Edge Operator 帮我找出最接近真实付款的机会，并在授权范围内直接拿出可验证成果。"

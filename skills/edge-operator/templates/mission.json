@@ -1,0 +1,52 @@
+{
+  "mission_id": "EO-EXAMPLE-001",
+  "goal": "研究一个有真实付费证据的普通消费者服务机会，并完成可用样品和透明报价草稿",
+  "mode": "research_and_prepare",
+  "state": "PROPOSED",
+  "true_success": "找到可核验需求来源、可展示样品、成本测算与能供用户判断的下一步",
+  "budget_currency": "USD",
+  "spending_limit": 0,
+  "authority": {
+    "public_research": true,
+    "sandbox_prototype": true,
+    "write_allowlisted_workspace": false,
+    "outreach": false,
+    "publish": false,
+    "payment": false
+  },
+  "agents": [
+    {
+      "role": "research_scout",
+      "actual_tool_access": "unknown",
+      "owner": "to_assign"
+    },
+    {
+      "role": "local_builder",
+      "actual_tool_access": "unknown",
+      "owner": "to_assign"
+    },
+    {
+      "role": "evidence_auditor",
+      "actual_tool_access": "unknown",
+      "owner": "to_assign"
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "EO-EXAMPLE-001-R1",
+      "owner_role": "research_scout",
+      "goal": "整理至少一种可核查的现有付费或报价场景",
+      "requires_external_action": false,
+      "status": "PROPOSED",
+      "evidence_to_return": "URL、观察日期、原始价格/交易状态、可信度与反证"
+    },
+    {
+      "task_id": "EO-EXAMPLE-001-B1",
+      "owner_role": "local_builder",
+      "goal": "完成可在沙盒运行、可截图或体验的结果样品",
+      "requires_external_action": false,
+      "status": "PROPOSED",
+      "evidence_to_return": "文件路径、运行结果、异常测试与失败说明"
+    }
+  ]
+}

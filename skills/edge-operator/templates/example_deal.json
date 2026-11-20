@@ -1,0 +1,16 @@
+{
+  "scenario_name": "演示用的假设服务订单，非真实市场数据",
+  "currency": "CNY",
+  "price": 300,
+  "refund_rate": 0.1,
+  "refund_handling_cost": 5,
+  "fulfillment_cost": 80,
+  "api_cost": 20,
+  "labor_cost": 10,
+  "customer_acquisition_cost": 30,
+  "payment_fee_percent": 0.03,
+  "payment_fee_fixed": 1,
+  "monthly_fixed_cost": 600,
+  "expected_orders_per_month": 10,
+  "data_quality": "illustrative_assumptions_only"
+}
