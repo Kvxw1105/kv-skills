@@ -1,4 +1,4 @@
-# Edge Operator Agent Kit v1.3.1 | 跨 Agent 行为安装套件
+# Edge Operator Agent Kit v1.3.2 | 跨 Agent 行为安装套件
 
 **Skill 是按需加载的完整能力；AGENTS.md、CLAUDE.md、GEMINI.md、SOUL.md 等文件是宿主每次启动会读取的短提示；CLI 负责安全安装、更新、检查与移除；评测器检查规则是否真的增益。**
 
@@ -70,3 +70,9 @@ python3 agent-kits/edge-operator/evals/bench.py packets --out /tmp/edge-benchmar
 ## 盲测与反基线泄漏
 
 正式 24 题事前注册的五臂对照，请看 [`evals/BLIND_PROTOCOL.md`](evals/BLIND_PROTOCOL.md)。`evals/blind_bench.py` 做离线中性题包与真实回执的独立裁决汇总，不连接模型，也不提供公开题答案。`evals/bench.py` 的 8 道题仅供冒烟测试，其所有 arm 的通用提示已去掉会污染基线的 Edge 风格提示。
+
+### Laoshou v0.1.2 的前置拦截可证伪测试（v1.3.2）
+
+[事前注册盲测协议](evals/BLIND_PROTOCOL.md) 新增源代码版本锁定与三个互不混算的结论：P1 首响发现分发激励、P2 从运行日志核算首响费用、P3 真机会中的传播误杀。要求至少三对带有初始可判别线索的真假邻例、其中至少两对单条链接；拒绝未经证据支持的抢拒，报告 1/3–1/2 成本比的未决区，零误杀只算这批试题的观察结果。
+
+此工具仍只会创建本地题包、校验独立日志、计算指标。**没有自动调用五个真实模型、没有真实商业交易战绩；绝不把合成测试结果当能力提升证明。**
