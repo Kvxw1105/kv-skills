@@ -17,6 +17,8 @@ class BenchTest(unittest.TestCase):
             self.assertEqual(len(list(out.rglob("*.md"))),len(cases)*len(cohorts))
             data=[(out/cohort/"B01.md").read_text() for cohort in cohorts]
             self.assertEqual(len(set(data)),1)
+            self.assertNotIn("模拟/挂牌价称为实收",data[0])
+            self.assertNotIn("可逆动作",data[0])
     def test_missing_results_are_counted_as_zeros(self):
         cases,cohorts=bench.get_cases()
         with tempfile.TemporaryDirectory() as tmp:
