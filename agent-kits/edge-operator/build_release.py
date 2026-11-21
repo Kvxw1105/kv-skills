@@ -22,13 +22,13 @@ def build(dst:Path)->dict:
     dst.parent.mkdir(parents=True,exist_ok=True)
     with ZipFile(dst,"w",ZIP_DEFLATED,compresslevel=9) as zipfile:
         for path in files: zipfile.write(path,"edge-operator-kit/"+path.relative_to(ROOT).as_posix())
-        zipfile.writestr("edge-operator-kit/CHECKSUMS.json",json.dumps({"version":"1.3.1","files":entries},indent=2,ensure_ascii=False)+"\n")
+        zipfile.writestr("edge-operator-kit/CHECKSUMS.json",json.dumps({"version":"1.3.2","files":entries},indent=2,ensure_ascii=False)+"\n")
     with ZipFile(dst) as zipfile:
         assert zipfile.testzip() is None
         manifest=json.loads(zipfile.read("edge-operator-kit/CHECKSUMS.json"))
         for file,digest in manifest["files"].items():
             assert hashlib.sha256(zipfile.read("edge-operator-kit/"+file)).hexdigest()==digest
-    return {"version":"1.3.1","files":len(files),"archive":str(dst)}
+    return {"version":"1.3.2","files":len(files),"archive":str(dst)}
 
 if __name__=="__main__":
     parser=argparse.ArgumentParser();parser.add_argument("--out",type=Path,default=Path("dist/edge-operator-agentkit.zip"))

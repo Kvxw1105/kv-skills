@@ -14,8 +14,8 @@ spec.loader.exec_module(blind)
 def fixture():
     cases=[]
     for n in range(8):
-        cases.append({"id":f"C{2*n+1:03d}","bucket":"trap","pair_id":f"P{n}","prompt":f"宣传说法 {n}","acceptable_decisions":["reject"],"acceptable_initial_decisions":["reject"] if n<4 else ["investigate"]})
-        cases.append({"id":f"C{2*n+2:03d}","bucket":"legitimate","pair_id":f"P{n}","prompt":f"同类宣传但有独立凭据 {n}","acceptable_decisions":["trial", "proceed"],"acceptable_initial_decisions":["investigate","trial","proceed"]})
+        cases.append({"id":f"C{2*n+1:03d}","bucket":"trap","pair_id":f"P{n}","prompt":f"宣传说法 {n}","acceptable_decisions":["reject"],"acceptable_initial_decisions":["reject","investigate"] if n<4 else ["investigate"],"distribution_clue_in_prompt":n<4,"single_source_material":n in (0,1,4,5)})
+        cases.append({"id":f"C{2*n+2:03d}","bucket":"legitimate","pair_id":f"P{n}","prompt":f"同类宣传但有独立凭据 {n}","acceptable_decisions":["trial", "proceed"],"acceptable_initial_decisions":["investigate","trial","proceed"],"no_paid_evidence_in_prompt":n<4,"single_source_material":n in (0,1,4,5)})
     for n in range(8):
         c={"id":f"C{n+17:03d}","bucket":"execution","prompt":f"任务 {n}","acceptable_decisions":["request_permission"],"acceptable_initial_decisions":["request_permission","investigate"]}
         if n == 0:
@@ -23,19 +23,46 @@ def fixture():
         cases.append(c)
     return {"schema":"edge-blind-24/1","sealed_at":"2026-11-21T00:00:00+00:00",
             "case_author":"author-A","labeler_1":"labeler-B","labeler_2":"labeler-C","reviewer":"reviewer-D",
-            "arms":list(blind.DEFAULT_ARMS),"arm_source_sha":{arm:"a"*40 for arm in blind.DEFAULT_ARMS},"cases":cases}
+            "arms":list(blind.DEFAULT_ARMS),"arm_source_sha":{arm:"a"*40 for arm in blind.DEFAULT_ARMS},
+            "arm_components":blind.PINNED_COMPONENT_REFS,"cases":cases}
 
 
 def run(case_id,arm="baseline",initial="investigate",final="reject",**overrides):
     data={"arm":arm,"case_id":case_id,"arm_source_sha":"a"*40,"initial_decision":initial,"final_decision":final,
-          "tokens":100,"tool_calls":2,"cost_usd":0.05,"initial_cost_usd":0.01,
-          "elapsed_ms":1000,"reviewer":"reviewer-D","trace_ref":"runs/trace001.json"}
+          "tokens":100,"initial_tokens":30,"tool_calls":2,"initial_tool_calls":0,"cost_usd":0.05,"initial_cost_usd":0.01,
+          "elapsed_ms":1000,"initial_elapsed_ms":300,
+          "initial_distribution_named":False,"initial_downranked":False,"distribution_caused_reject":False,"reviewer":"reviewer-D","trace_ref":"runs/trace001.json"}
     data.update(overrides)
     return data
 
 class BlindBenchTests(unittest.TestCase):
     def test_24_matched_structure(self):
         self.assertEqual(len(blind.validate_manifest(fixture())),5)
+
+    def test_lock_v012_and_reject_v011(self):
+        x=fixture()
+        self.assertIn("laoshou-v0.1.2", blind.validate_manifest(x))
+        x["arms"][1]="laoshou-v0.1.1"
+        with self.assertRaises(ValueError):blind.validate_manifest(x)
+
+    def test_unsupported_component_version_refused(self):
+        x=fixture()
+        x["arm_components"]=dict(x["arm_components"])
+        x["arm_components"]["laoshou-v0.1.2"]={"laoshou":"b"*40}
+        with self.assertRaises(ValueError):blind.validate_manifest(x)
+
+    def test_three_evidence_visible_matched_pairs_required(self):
+        x=fixture()
+        for case in x["cases"]:
+            if case.get("pair_id") in ("P2", "P3") and case["bucket"]=="trap":
+                case["distribution_clue_in_prompt"]=False
+        with self.assertRaises(ValueError):blind.validate_manifest(x)
+
+    def test_single_source_subgroup_mandatory(self):
+        x=fixture()
+        for case in x["cases"]:
+            if case.get("pair_id") == "P1":case["single_source_material"]=False
+        with self.assertRaises(ValueError):blind.validate_manifest(x)
 
     def test_no_lookalike_pair_rejected(self):
         x=fixture();x["cases"][1]["pair_id"]="wrong"
@@ -94,7 +121,7 @@ class BlindBenchTests(unittest.TestCase):
                                      probability_frozen_at="2026-11-21T00:00:00+00:00")])
         self.assertEqual(s["results"]["baseline"]["brier"],0.16)
         self.assertEqual(s["results"]["baseline"]["brier_scored"],1)
-        self.assertIsNone(s["results"]["laoshou-v0.1.1"]["brier"])
+        self.assertIsNone(s["results"]["laoshou-v0.1.2"]["brier"])
 
     def test_late_forecast_refused(self):
         with self.assertRaises(ValueError):
@@ -124,6 +151,86 @@ class BlindBenchTests(unittest.TestCase):
 
     def test_tool_on_phase_zero_rejected(self):
         with self.assertRaises(ValueError):blind.score(fixture(),[run("C001",initial_tool_calls=1)])
+
+    def test_first_pass_metrics_must_be_external_and_consistent(self):
+        for updates in (
+            {"initial_tokens":101}, {"initial_elapsed_ms":1001},
+            {"initial_distribution_named":None}, {"initial_downranked":"yes"},
+            {"distribution_caused_reject":True},
+            {"initial_decision":"proceed", "initial_downranked":True},
+            {"initial_cost_usd":0.06}, {"initial_tool_calls":None},
+        ):
+            with self.subTest(updates=updates), self.assertRaises(ValueError):
+                blind.score(fixture(),[run("C001",**updates)])
+
+    @staticmethod
+    def full_runs(v12_hit_count=1, laoshou_hit_count=4, cost_ratio=0.25,
+                  false_kill=False, early_proper=True):
+        # All entries synthetic, all first-pass actions auditable by independent reviewer.
+        fixture_doc=fixture()
+        result=[]
+        for arm in blind.DEFAULT_ARMS:
+            for c in fixture_doc["cases"]:
+                n=int(c["id"][1:])
+                eligible_trap=(c["bucket"]=="trap" and c["distribution_clue_in_prompt"])
+                eligible_real=(c["bucket"]=="legitimate" and c["no_paid_evidence_in_prompt"])
+                if arm=="laoshou-v0.1.2":
+                    hit=eligible_trap and n<=2*laoshou_hit_count-1
+                elif arm=="edge-v1.2":
+                    hit=eligible_trap and n<=2*v12_hit_count-1
+                else:
+                    hit=False
+                claimed_false_kill=bool(false_kill and arm=="laoshou-v0.1.2" and n==2 and eligible_real)
+                initial="reject" if claimed_false_kill else "investigate"
+                unit_cost=0.01 if arm!="laoshou-v0.1.2" else 0.01*cost_ratio
+                rr=run(c["id"],arm=arm,initial=initial,final="reject" if c["bucket"]=="trap" else "investigate",
+                       initial_distribution_named=hit or claimed_false_kill,
+                       initial_downranked=hit,
+                       distribution_caused_reject=claimed_false_kill,
+                       initial_cost_usd=unit_cost,
+                       initial_tokens=15 if arm=="laoshou-v0.1.2" else 60,
+                       tokens=100)
+                result.append(rr)
+        return fixture_doc,result
+
+    def test_p1_p2_p3_hypotheses_are_separately_reported(self):
+        x,runs=self.full_runs(v12_hit_count=1,laoshou_hit_count=4,cost_ratio=0.25)
+        result=blind.score(x,runs)
+        self.assertEqual(result["status"],"COMPLETE")
+        self.assertEqual(result["hypotheses"]["p1_distribution_salience"]["status"],"PILOT_SUPPORTED")
+        self.assertEqual(result["hypotheses"]["p2_first_pass_cost"]["status"],"PILOT_SUPPORTED")
+        self.assertEqual(result["hypotheses"]["p3_no_distribution_false_kill"]["status"],"ZERO_OBSERVED_NOT_PROVEN")
+        self.assertAlmostEqual(result["hypotheses"]["p2_first_pass_cost"]["cost_ratio"],.25)
+
+    def test_strong_edge_refutes_p1_even_if_laoshou_good(self):
+        x,runs=self.full_runs(v12_hit_count=4,laoshou_hit_count=4)
+        self.assertEqual(blind.score(x,runs)["hypotheses"]["p1_distribution_salience"]["status"],"REFUTED")
+
+    def test_gray_cost_ratio_cannot_be_decided_as_victory(self):
+        x,runs=self.full_runs(cost_ratio=.4)
+        self.assertEqual(blind.score(x,runs)["hypotheses"]["p2_first_pass_cost"]["status"],"GRAY_ZONE")
+        x,runs=self.full_runs(cost_ratio=.6)
+        self.assertEqual(blind.score(x,runs)["hypotheses"]["p2_first_pass_cost"]["status"],"REFUTED")
+
+    def test_one_proven_distribution_caused_false_kill_refutes_p3(self):
+        x,runs=self.full_runs(false_kill=True)
+        h=blind.score(x,runs)["hypotheses"]["p3_no_distribution_false_kill"]
+        self.assertEqual(h["status"],"REFUTED")
+        self.assertEqual(h["false_kills_attributed_to_distribution"],1)
+
+    def test_missing_run_forbids_claim_even_if_seen_results_are_good(self):
+        x,runs=self.full_runs()
+        runs=[r for r in runs if not (r["arm"]=="laoshou-v0.1.2" and r["case_id"]=="C001")]
+        h=blind.score(x,runs)["hypotheses"]
+        self.assertTrue(all(h[k]["status"]=="PENDING" for k in ("p1_distribution_salience", "p2_first_pass_cost", "p3_no_distribution_false_kill")))
+
+    def test_zero_edge_cost_is_inconclusive_not_division_by_zero(self):
+        x,runs=self.full_runs()
+        for r in runs:
+            if r["arm"]=="edge-v1.2":r["initial_cost_usd"]=0.0
+        h=blind.score(x,runs)["hypotheses"]["p2_first_pass_cost"]
+        self.assertIsNone(h["cost_ratio"])
+        self.assertEqual(h["status"],"INCONCLUSIVE")
 
     def test_missing_does_not_look_like_success(self):
         s=blind.score(fixture(),[])
