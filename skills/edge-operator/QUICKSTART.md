@@ -1,3 +1,10 @@
+# v1.3 最短入口：先判断，再行动
+
+商业热潮/赚钱工具先问：谁在喊？谁买传播？谁真正付钱？为什么轮到我？
+同脚本不能直接指控存在“托”；核实商业推广、模仿、推荐算法。把工具商、推广者、末端用户的交易收益、退款和风险拆开。连赢后复检优势来源与失效条件。
+
+更完整的技能正文见 [`SKILL.md`](SKILL.md)；跨 Agent 项目安装见 [`agent-kits/edge-operator`](../../agent-kits/edge-operator/README.md)。
+
 # Edge Operator v1.0 · 启动与跨 Agent 移植
 
 ## 目的

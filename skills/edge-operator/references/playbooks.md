@@ -6,6 +6,12 @@
 
 For actionable commercial recommendations, fill [orientation card](../templates/orientation_card.md) first: a comparable outside-view cohort (or **UNKNOWN**), at least two rival explanations and tests that might disconfirm each, value-position/bottleneck ownership, likely bypass route, and an erosion/recheck trigger. Do not let an unsupported base-rate guess masquerade as a measured cohort. When the research remains exploratory, mark probability/forecast as DRAFT and continue low-risk research instead of inventing numbers to satisfy a form.
 
+## v1.3 分发激励与卖铲子三方账（只在相关热潮出现时触发）
+
+当多个博主/内容号同推“赚钱秘诀”或平台工具：记录 **工具/平台供应方**（订阅/成交/续费）、**分销/创作者**（佣金/流量/品牌）、**末端付费者**（购买结果/退款/时间及合规风险）的**可观察证据**。至少列出「付费推广」「自然模仿」「算法放大」三种解释，寻找能区分的来源，不凭复制文案直接断言存在托或诈骗。拒绝用公开佣金表冒充某账号的实收佣金、用公开挂牌冒充成交。交易负外部性和知情风险具体审查，不能简单用“某客户最后亏了”代替欺骗证据。
+
+最小交付是一张三方利益/风险账以及一次可以合法获取的下一层证据。只有和任务有关才触发，不把它加进所有询价流程。
+
 ## 1. Deal Scout：从哪里真的有人花钱？
 
 **输入**：平台/人群/技术/抱怨/圈层/公开案例之一。

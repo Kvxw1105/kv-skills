@@ -4,7 +4,7 @@
 
 [中文快速开始](QUICKSTART.md) · [完整提示词](prompts/MASTER_PROMPT.txt) · [思维原子](references/mind-atoms.md) · [角色组合](references/archetype-mixer.md) · [权限配置](references/permission-charter.md) · [MIT License](LICENSE)
 
-> **当前版本：v1.2.0**。这是提示词、知识库、协议和轻量校验脚本组成的 Skill，不是已获得社交账号控制权或支付权限的自治 SaaS。成功交易、已安装代理、API 调用和实际发布必须分别验收。
+> **当前版本：v1.3.0**。该 Skill 现在也是跨 Agent 运行套件的一部分：可通过 [Agent Kit](../../agent-kits/edge-operator/README.md) 在明确的本地工作区里选择性安装 Skill 与启动指令。它不是已获得社交账号控制权或支付权限的自治 SaaS。成功交易、已安装代理、API 调用和实际发布必须分别验收。
 
 ## Why
 
@@ -73,6 +73,8 @@ Python 3 standard library only. The example deal numbers are **illustrative assu
 4. Record observable behavior changes and release notes in [`CHANGELOG.md`](CHANGELOG.md); update prompt/Skill content together when a rule changes.
 5. Open a pull request with inputs, produced artifacts, verifiable outcomes and limitations. Never include tokens, cookies, third-party private data or individual account credentials.
 
+**v1.3 fusion:** The useful part of [Laoshou](https://github.com/Kvxw1105/laoshou-skill) is a low-friction first-pass question sequence, distribution incentive analysis, three-sided shovel-seller accounting, and success/recommendation revalidation. We integrate these **without** a duplicate settlement ledger or 20 new atoms. See [merge provenance](references/laoshou-merge.md).
+
 **Release rule:** do not increase atom counts or report agent capability gains unless backed by actual text/tests. Continuous integration / auto-deployment is **not** included in v1.0.0; run the commands above before publishing updates.
 
 ## Scope and boundaries
@@ -109,3 +111,7 @@ python scripts/package.py --out ./dist/skill.zip
 Calibration sharing between agents: [portable JSON contract](references/interoperability.md). Do not claim drop-in compatibility with another team's schema until an explicit mapping has been tested.
 
 Full rationale and critique-by-critique responses: [external review response](references/review-response-2026-11-20.md).
+
+## Install beyond Skill metadata (v1.3)
+
+For Codex, Claude Code, Gemini CLI, OpenCode, Cursor and OpenClaw, see [agent-kits/edge-operator](../../agent-kits/edge-operator/README.md). The installer previews changes, appends scoped instruction blocks, copies the Skill to the per-host path, keeps original content, refuses unmanaged overwrite, and allows removal. Prompt-only export is for manual pasting, not a provider system-prompt mutation. `AGENTS.md` in this Skill is maintainer guidance, not the destination workspace file. A verified local installation is not proof of improved model behavior.

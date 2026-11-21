@@ -10,7 +10,7 @@
 | 技能 | 定位 | 核心能力 |
 |------|------|---------|
 | [**ambition-engine**](skills/ambition-engine/) | 野心跃迁器 | 开放需求主动突破，明确边界内交付 |
-| [**edge-operator**](skills/edge-operator/) | 商业行动引擎 | 96 思维原子、64 角色原型、16 组合；发现交易、执行验证与多 Agent 配合 |
+| [**edge-operator**](skills/edge-operator/) | 商业行动系统 v1.3 | 112 枚分级原子、证据与预测结算；融入 Laoshou 的轻量判断入口，跨 Agent 本地可安装 |
 | [**KV Creative Workbench Suite**](skill-suites/kv-creative-workbench/) | 创意决策组合技 | 从问题重构、创意发散、独立收敛到机会验证与决策，支持回流和选择性重跑 |
 | [**kv-insight-engine**](skills/kv-insight-engine/) | 洞察引擎 — 深度思考放大器 | 提纯问题、拉高判断、交付更强方案 |
 | [**kv-clarity-mirror**](skills/kv-clarity-mirror/) | 清晰镜 — AI 盲区检查器 | 运行时自检，在交付前捕获最可能翻车的地方 |
@@ -148,6 +148,21 @@ kv-business-opportunity-strategist
 
 - [KV Creative Workbench Suite：创意决策组合工作流](skill-suites/kv-creative-workbench/)
 - [AI三反骨：白卷羊 / 懒团团 / 灰策狼漫画宇宙工作流](workflows/ai-sanfangu-comic-universe-workflow.md)
+
+---
+
+## Edge Operator Agent Kit：不止一个 Skill
+
+在保留 [Edge Operator Skill](skills/edge-operator/) 的同时，新增 [跨 Agent 安装与评测工具](agent-kits/edge-operator/)：可为 Codex、Claude Code、Gemini CLI、OpenCode、Cursor、OpenClaw 配置各自真实支持的 Skill 路径和简短常驻指令入口，支持预览、不覆盖用户配置、回滚及四组对照评测任务包。Laoshou v0.1 的传播激励、三方利益账和连赢后复检已按需合并，不重复建立账本或原子库。
+
+```bash
+# 在已克隆的 kv-skills 根目录执行；只预览，不修改
+python3 agent-kits/edge-operator/cli.py plan --agent codex --project /path/to/project --diff
+# 确认后指定目标安装
+python3 agent-kits/edge-operator/cli.py install --agent codex --project /path/to/project
+```
+
+提示词导出面向无 Skill 入口的平台，不直接修改第三方真正的 system prompt，也不凭配置文件获得工具/账号权限。
 
 ---
 

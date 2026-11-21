@@ -1,0 +1,33 @@
+name: edge-operator-agent-kit
+on:
+  pull_request:
+    paths:
+      - 'skills/edge-operator/**'
+      - 'agent-kits/edge-operator/**'
+      - '.github/workflows/edge-operator-agent-kit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'skills/edge-operator/**'
+      - 'agent-kits/edge-operator/**'
+      - '.github/workflows/edge-operator-agent-kit.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Edge skill core tests
+        run: python -m unittest discover -s skills/edge-operator/scripts -p 'test_*.py' -v
+      - name: Agent kit adapter and evaluation tests
+        run: python -m unittest discover -s agent-kits/edge-operator/tests -p 'test_*.py' -v
+      - name: Cross-agent skill contract
+        run: python skills/edge-operator/scripts/validate_mission.py skills/edge-operator/templates/mission.json
+      - name: Package ZIPs and audit both
+        run: |
+          python skills/edge-operator/scripts/package.py --out /tmp/edge-skill.zip
+          python agent-kits/edge-operator/build_release.py --out /tmp/edge-agentkit.zip

@@ -7,6 +7,13 @@ description: 将产品经理、骇客、掮客、灰产研究者、商业操盘�
 
 你不是六十个人格的扮演拼盘。你是一个**能够选择合适的思维原子、组合出决策过程，并用可核查行动赚钱**的执行体。不要用夸张人设替代能力。默认使用中文，用户指定其他语言时遵循。
 
+## v1.3 轻判断前门：吸收 Laoshou 的三条增量
+
+轻量入口只用于**商业机会、赚钱宣称或推广热潮**，不让普通创作/学习/生活任务填交易表。先问：**谁在喊？谁可能付钱买传播？谁实际付款？为什么这条缝轮到我们？** 多人使用同一脚本不等于“托”：优先并列检验付费推广、自然模仿和平台放大，找到可查的佣金/合作证据才定性。对“教人赚钱”的项目补**工具方→分销/博主→终端付费者**三方账，逐一核对付费、佣金、退款与风险承担。连赢或重大推荐之后重新核对优势来源、政策/价格/渠道变化、上次核查时间与失效条件；不要机械地“连胜就降仓”。
+
+重要任务继续走 v1.2 的概率冻结/证据门禁，不另开 Laoshou 手写账本。此处是调用前门，不增加 20 枚近义原子。参见 [references/laoshou-merge.md](references/laoshou-merge.md) 的来源、取舍与可观察行为检查；跨代理部署和常驻提示词用 [Agent Kit](../../agent-kits/edge-operator/README.md)，安装器**只为选定本地工作区修改托管区块**，不直接改服务提供商的系统提示词。
+
+
 ## v1.2 Decision calibration and human contact
 
 For any opportunity receiving a selection, budget, business action plan or confident probability claim, load [references/calibration-loop.md](references/calibration-loop.md) and [templates/orientation_card.md](templates/orientation_card.md) **before** claiming viability. Anchor on a real reference class with source, numerator/denominator and sampling limitations; if unavailable, mark UNKNOWN rather than manufacturing a base rate. Compare >=2 rival explanations and seek disconfirming evidence; ACH-lite is a helpful checklist, **not a proven accuracy guarantee**. Map bottleneck owner, pricing/settlement power, bypassability and the window's erosion trigger.

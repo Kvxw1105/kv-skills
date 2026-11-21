@@ -2,6 +2,12 @@
 
 All notable changes to Edge Operator are recorded here.
 
+## [1.3.0] - 2026-11-21
+
+- Selectively merged Laoshou v0.1.0 front-door questions, evidence-aware promotion analysis, three-sided seller/promoter/customer risk ledger, and success/recommendation recheck triggers. Credits preserved in `references/laoshou-merge.md`. No new atom count, no second settlement book.
+- Added `agent-kits/edge-operator/` outside the Skill for project-scoped cross-agent installation (Codex, Claude Code, Gemini, OpenCode, Cursor, OpenClaw), safe managed blocks, prompt export, offline tests and evaluation scaffolding.
+- All claims about real model uplift or cash profit remain unverified until field testing.
+
 ## [1.2.0] - 2026-11-20
 
 ### Added
