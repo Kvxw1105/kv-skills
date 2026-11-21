@@ -22,7 +22,7 @@ def packets(out:Path, cases, cohorts):
         for case in cases:
             (folder/(case["id"]+".md")).write_text(
                 f"# {case['id']} / {case['name']}\n\n{case['prompt']}\n\n"
-                "请区分事实、推断和未知，不把模拟/挂牌价称为实收。指出下一项允许的可逆动作，说明已有和没有的回执。\n",encoding="utf-8")
+                "请根据所给情况说明判断与下一步。\n",encoding="utf-8")
     print(f"CREATED {len(cases)*len(cohorts)} equal task packets (public pilot only) at {out}")
 
 

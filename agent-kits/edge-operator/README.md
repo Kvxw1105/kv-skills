@@ -1,4 +1,4 @@
-# Edge Operator Agent Kit v1.3 | 跨 Agent 行为安装套件
+# Edge Operator Agent Kit v1.3.1 | 跨 Agent 行为安装套件
 
 **Skill 是按需加载的完整能力；AGENTS.md、CLAUDE.md、GEMINI.md、SOUL.md 等文件是宿主每次启动会读取的短提示；CLI 负责安全安装、更新、检查与移除；评测器检查规则是否真的增益。**
 
@@ -61,8 +61,12 @@ python3 -m unittest discover -s agent-kits/edge-operator/tests -p 'test_*.py'
 python3 agent-kits/edge-operator/evals/bench.py packets --out /tmp/edge-benchmark
 ```
 
-四组对照测试：无 Skill / Laoshou / Edge / 两者叠加；同题同模型、相同工具与权限，独立评定准确率和实际执行回执。脚本生成任务包、检查评分完整性，但**并没有替你真实运行收费模型或实地收款**。详情见 [evals/README.md](evals/README.md)。
+公开的四组冒烟测试：无 Skill / Laoshou / Edge / 两者叠加；同题同模型、相同工具与权限，独立评定准确率和实际执行回执。脚本生成任务包、检查评分完整性，但**并没有替你真实运行收费模型或实地收款**。详情见 [evals/README.md](evals/README.md)。
 
 [各宿主官方入口与限制](ADAPTERS.md) · [Edge 主 Skill](../../skills/edge-operator/SKILL.md) · [Laoshou 融合说明](../../skills/edge-operator/references/laoshou-merge.md)
 
 运行环境：Python 3.10+ 标准库；无远程可执行下载器；MIT。宿主版本和企业策略可能使某些文件无法自动加载，安装后的激活必须在目标软件里再验证一次。
+
+## 盲测与反基线泄漏
+
+正式 24 题事前注册的五臂对照，请看 [`evals/BLIND_PROTOCOL.md`](evals/BLIND_PROTOCOL.md)。`evals/blind_bench.py` 做离线中性题包与真实回执的独立裁决汇总，不连接模型，也不提供公开题答案。`evals/bench.py` 的 8 道题仅供冒烟测试，其所有 arm 的通用提示已去掉会污染基线的 Edge 风格提示。
