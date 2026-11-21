@@ -50,6 +50,10 @@ python scripts/calibration.py report path/to/forecasts.json
 
 Only events that have genuinely resolved to 0 or 1 may be Brier-scored. A missed deadline with missing evidence remains *overdue/unresolved*, not a scored failure. A VOID record stays visible in the denominator of attempted tests, but is excluded from predictive accuracy. If a third-party receipt is forged, the validator cannot know; independent review is still required.
 
+## 4.5 连赢后的优势失效与推荐再核查
+
+连续赢、连续赚钱、或者某条推荐被反复引用时，**触发审查而非自动降敞口**：列出共同环境因素/关联样本、真实增量证据、可绕过的渠道、是否已改价/改规则，以及相反证据的下次触发日；将高影响推荐标明 `checked_at` 与 `invalidate_if`。运气是有依据的定性标注，不能把单次赢/输直接解释为某个原子的因果贡献。若新信息影响冻结预测，另起修订，不追改原概率。
+
 ## 5. Monthly settlement review
 
 For settled forecasts, calculate binary Brier `(p-y)^2` (lower is better, range 0..1) and aggregate over comparable, predeclared questions. Compare Brier against **the same resolved subset's** reference-class forecast when a genuine cohort baseline exists. The `Brier skill` helper reports `1 - Brier_model/Brier_baseline`; it is omitted when the baseline is absent or zero. If the number of observations is small, output descriptive statistics only, no improvement claim. Even a properly scored series may have luck, correlated episodes, sample selection or question-design bias.

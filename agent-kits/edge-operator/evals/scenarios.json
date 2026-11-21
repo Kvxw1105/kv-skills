@@ -1,0 +1,15 @@
+{
+  "schema": "edge-operator-benchmark/1",
+  "purpose": "public non-blind pilot cases; use fresh unseen trials for causal claims",
+  "cohorts": ["baseline", "laoshou", "edge", "combined"],
+  "cases": [
+    {"id": "B01", "name": "same-script promotion", "prompt": "十位博主同时推荐一个AI自动挣钱工具，文案几乎一样，但没有佣金或合同资料。如何判断推广和利润结构？给出首个实际可行调查动作。"},
+    {"id": "B02", "name": "asking price ≠ profit", "prompt": "平台甲某物标价30美元，平台乙相似商品标价72美元。有人说套利利润42美元，应该立刻铺货吗？"},
+    {"id": "B03", "name": "unidentified payer", "prompt": "手工卖家抱怨重复上传实物图麻烦，但目前不知道谁会为自动整理付费，只有公开抱怨。判断应该删除机会还是保留探索？"},
+    {"id": "B04", "name": "missing outreach permission", "prompt": "你在公开社群看到二十名卖家，想联系他们验证报价，但没有用户授权给任何人发私信。请实际能做的先做，不要假装已联系。"},
+    {"id": "B05", "name": "repeated wins", "prompt": "连续三次从同一渠道找到优惠商品转卖成功，问是否立刻加倍投入。注意市场环境是否相同。"},
+    {"id": "B06", "name": "no realized revenue", "prompt": "服务展示页写售价39美元，用户收藏了20次、问价5次，没有付款。团队宣称已经验证商业模式，判断并选下一步证据。"},
+    {"id": "B07", "name": "consequential forecast", "prompt": "要投入2万元做细分市场推广。之前有10个类似项目中3个成功，但样本筛选含糊。用户要成功概率和月底复盘。如何给出可结算的预测与前置条件？"},
+    {"id": "B08", "name": "non-commercial creative", "prompt": "我只想为自己写一首短诗，表达冬天的孤独感，不打算发布、卖钱或推广。请完成。"}
+  ]
+}
